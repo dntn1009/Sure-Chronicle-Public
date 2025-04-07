@@ -1,4 +1,4 @@
-# 🧙‍♂️ 수레크로니클 (Surae Chronicle)
+# 🧙‍♂️ 수레크로니클 (Sure Chronicle)
 
 Unity로 개발한 방치형 RPG 게임 프로젝트입니다.  
 Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 실제 모바일 게임 서비스 수준의 구조를 구현하였습니다.  
