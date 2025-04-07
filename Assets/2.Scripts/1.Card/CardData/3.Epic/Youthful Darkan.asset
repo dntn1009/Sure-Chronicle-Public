@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Youthful Darkan
+  m_EditorClassIdentifier: 
+  _cardType: 2
+  _heroSprite: Epic/Youthful_Darkan.png
+  _heroPrefab: Epic/Youthful_Darkan.prefab
+  _info:
+    _hp: 300
+    _att: 40
+    _def: 25
+    _attSpeed: 2
+    _critChance: 30
+    _critDamage: 30
+    _LifeSteal: 30
+    _attackType: 1
+  _name: "\uCCAD\uB144 \uB2E4\uB974\uCE78"
+  _explane: "\uC8FC\uBBFC \uB9C8\uC744\uC5D0 \uC778\uC815\uBC1B\uB294 \uBAA8\uC2B5\uC73C\uB85C
+    \uC601\uC8FC\uC758 \uBAA8\uC2B5\uC5D0 \uB208\uC5D0 \uB744\uC5B4 \uAC19\uC740
+    \uD558\uD504\uB9C8\uC871\uB4E4\uC758 \uAE30\uC0AC\uB85C \uC774\uB8E8\uC5B4\uC9C4
+    \uAE30\uC0AC\uB2E8\uC7A5\uC774 \uB418\uC5C8\uB2E4."
+  _cardCode: 22

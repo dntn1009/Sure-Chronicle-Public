@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Dorgan
+  m_EditorClassIdentifier: 
+  _cardType: 1
+  _heroSprite: Rare/Dorgan.png
+  _heroPrefab: Rare/Dorgan.prefab
+  _info:
+    _hp: 150
+    _att: 15
+    _def: 20
+    _attSpeed: 2
+    _critChance: 20
+    _critDamage: 20
+    _LifeSteal: 20
+    _attackType: 1
+  _name: "\uB3C4\uB974\uAC04"
+  _explane: "\uC774\uC81C\uB294 \uC740\uD1F4\uD558\uC600\uC9C0\uB9CC \uACBD\uD5D8\uC774
+    \uB9CE\uC740 \uC0BC\uC9C0\uCC3D\uC744 \uB2E4\uB8E8\uB294 \uB178\uC7A5 \uAE30\uC0AC"
+  _cardCode: 11

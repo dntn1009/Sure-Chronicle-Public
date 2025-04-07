@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Rohan
+  m_EditorClassIdentifier: 
+  _cardType: 2
+  _heroSprite: Epic/Rohan.png
+  _heroPrefab: Epic/Rohan.prefab
+  _info:
+    _hp: 300
+    _att: 35
+    _def: 25
+    _attSpeed: 2
+    _critChance: 33
+    _critDamage: 25
+    _LifeSteal: 30
+    _attackType: 1
+  _name: "\uB85C\uD55C"
+  _explane: "\uB2E8\uAC80\uACFC \uCE7C\uC744 \uC774\uC6A9\uD55C \uD654\uB824\uD55C
+    \uAE30\uC220\uB85C \uC6A9\uBCD1 \uC0AC\uC774\uC5D0\uC11C \uC624\uB974\uB0B4\uB9AC\uB294
+    \uC778\uBB3C"
+  _cardCode: 20

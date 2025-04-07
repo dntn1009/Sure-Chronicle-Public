@@ -1,0 +1,469 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RemoteAssets
+  m_EditorClassIdentifier: 
+  m_GroupName: RemoteAssets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 05d96c6d1dc094948ae0ccfd2e59808a
+  m_SerializeEntries:
+  - m_GUID: 0001c040adc08ad48a8184717f3b3890
+    m_Address: Legendary/Erylia.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 00b64e7d883f46f4db36a884c232602d
+    m_Address: Epic/Youthful_Darkan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07b4e4e5d645fa348a6d25243cd202f6
+    m_Address: Normal/Barsun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 158045781a0e3a5458dd4886e48867f0
+    m_Address: Rare/Mirana.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16c9f11cada82b2429e67bf501e1dfdb
+    m_Address: Normal/Rook.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a860db7d1bc3d143b25285f7d47a664
+    m_Address: Legendary/Garen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ce4e3560cf025844bedfabf23834fde
+    m_Address: Normal/Ayla.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e1bcd9e9abe13f41bad82a5c763f6f4
+    m_Address: Epic/Tharin.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e435dbdf06f3814dba3eb57b0cef912
+    m_Address: Rare/Young_Darkan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2445c78878e95444ebd243da01702749
+    m_Address: Normal/Young_Ryushin.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28d94ba7e68f519418474c93fe297385
+    m_Address: Rare/Young_Darkan.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e2ec3f5746dd854490046cd53e708f1
+    m_Address: Legendary/Lucas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30aa109fccb6dae43a4f80ba42fe71d6
+    m_Address: Normal/Gilbert.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32213890697f5e84599b8bf92a3f8e3f
+    m_Address: Rare/Cirin.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 323610aa113c6374a90b9476deee8918
+    m_Address: Rare/Gaia.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3240d475cd5d25943b9560395973d77b
+    m_Address: Legendary/Erylia.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44b89d3637861e449839b512d5680f63
+    m_Address: Rare/Cirin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 458ba33b326f63b488c4a81375b3a365
+    m_Address: Normal/Young_Erian.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 491dfefcf63a3f446a47975f6f822326
+    m_Address: Epic/Camila.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ae6e975097c77b4bafe2201c1141def
+    m_Address: Epic/Drake.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d1a63fb36c6d6b44a3501980217c7c7
+    m_Address: Legendary/Garen.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e4ad50d9b29d164281ff190b4d883e6
+    m_Address: Legendary/Leon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52320e590bf774734a288886eba557ba
+    m_Address: SFX/HeroPurchase.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 590e0f0555fe7f941b5014b09cb7b97c
+    m_Address: Normal/Corn.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b15e7fca395344488c8f8db727cc9d6
+    m_Address: Normal/Gilbert.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f3941b542b4a904c85ad698ce4fd991
+    m_Address: Rare/Dorgan.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 674a57eda0d1f3740b6636e18ab8e5d7
+    m_Address: Normal/Young_Ryushin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e5110beea1f1364bbf1b88bd9e8b988
+    m_Address: Normal/Rook.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 784f2ae57bf94e64aacfefb8cc8b379d
+    m_Address: Normal/Young_Erian.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79e6baad2fd414b82a6d49ce1568d2e5
+    m_Address: SFX/ChapterStart.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bd6b897eb5ca4b7d88a205c4a51640c
+    m_Address: SFX/UpgradeButton.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bef0064f8567430cac22499c6b93d4f
+    m_Address: SFX/RaidButton.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e26c9daf4c32483b9c2790e662d3f1b
+    m_Address: SFX/BossButton.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 814c0fd886a55ca4a8b4bccd7cb17494
+    m_Address: Rare/Dorgan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81652031b64c342cc8dbc59c138d77c5
+    m_Address: SFX/AutoButton.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8dacb10d5c46650429e3b38ba1f4f742
+    m_Address: Epic/Rohan.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f2fecccd04f2784285da7984506716e
+    m_Address: Epic/Zarion.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cb19eb032d304b07acec596ae2ce4a4
+    m_Address: SFX/Button.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a71dab653a02faa4fa6993be86f00ab1
+    m_Address: Epic/Zarion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8f1f29cee17ed54096da1a1c04693fa
+    m_Address: SFX/ArrowAttack.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afe8ad2d1a2b119409e20008967615f3
+    m_Address: Legendary/Xerath.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b02b964cb4078b244bee81d59bf24824
+    m_Address: SFX/SlashAttack.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2855e5fe194d66468a94a39c35ec790
+    m_Address: Epic/Rohan.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b335ffaf8f64ad541a55611cebf1eaa8
+    m_Address: Epic/Camila.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b506deb230979684fbd4502a4154ccd0
+    m_Address: Normal/Aiden.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba0534e1b3dd4a6489eda39e5157e55d
+    m_Address: Normal/Grom.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be704d4f9ead98e45b1ec782260afa28
+    m_Address: Normal/Ayla.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6a04d2da9e71479b900f7381b720673
+    m_Address: SFX/Close.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cac0da7406581a74eab1e4657fd8b87d
+    m_Address: Rare/Gaia.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d20baffbac2f2d44a932c8b28b7f61a2
+    m_Address: Legendary/Leon.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d277e116012604f73833af4d67a01fa0
+    m_Address: SFX/JewelPurchase.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5e0f3025b7af114cb0aabb4566be907
+    m_Address: Rare/Youthful_Erian.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6651a3eeec9f2243a28d069b9ebbed3
+    m_Address: Rare/Youthful_Ryushin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d97dfa38e21235642834578ced37ab29
+    m_Address: Rare/Mirana.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dbde9f7b19c4944b298da7a0bdf1b292
+    m_Address: SFX/TopButton.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dca8722c7b1b62f489f2c8789e4bfc01
+    m_Address: Legendary/Xerath.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: deaf6cf666df2be4c9194d89715e9311
+    m_Address: Rare/Youthful_Ryushin.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df50f9c64a750744db19e16e1f77ac5b
+    m_Address: Rare/Grayfell.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6b6b4286c8ff4046986c4b22405fa77
+    m_Address: Epic/Drake.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8ddf8220b523ec43b1c8b2560a7d776
+    m_Address: Normal/Ollo.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9aea422c5d55cc4f94a902597e58540
+    m_Address: Normal/Aiden.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea2d91aab870ed443b517ba383ce4df3
+    m_Address: Normal/Ollo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb105cea3080a654c9532cc2a03d2d07
+    m_Address: Epic/Tharin.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebf69708fddbef94fa19f942fbd16297
+    m_Address: Rare/Youthful_Erian.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f042b555175cd864dba78ae463077acf
+    m_Address: Epic/Youthful_Darkan.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4cd72b278686fe4391bc00ad25202bc
+    m_Address: Legendary/Lucas.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f68d5c1e2ec99a94cbdf3566ef6790d3
+    m_Address: Normal/Grom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7c46d4908f2d34459db25f596c83f3d
+    m_Address: Legendary/Modekaiser.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroPrefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa62ffc16cc9e0142869a4b43a6bda4b
+    m_Address: Normal/Barsun.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: faa0e28f4109be44abcdd19bccadc057
+    m_Address: Legendary/Modekaiser.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb6ea502d21ef1b49aaa0c5802c241d7
+    m_Address: Normal/Corn.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcd76914932501b4a91117ba204281ff
+    m_Address: SFX/MagicAttack.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe0b1f9aeb45b41b089175aeeabd5d95
+    m_Address: SFX/OpenCard.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fef41d77906760646a6200c2adc6f1de
+    m_Address: Rare/Grayfell.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 83532c157800da84d8cfcaae87f9b5c5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b948ac5cce37a4c44a7e729606c9bf65, type: 2}
+    - {fileID: 11400000, guid: f796e8f7c2654c04eae8eccb0adf96eb, type: 2}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Leon
+  m_EditorClassIdentifier: 
+  _cardType: 3
+  _heroSprite: Legendary/Leon.png
+  _heroPrefab: Legendary/Leon.prefab
+  _info:
+    _hp: 400
+    _att: 65
+    _def: 40
+    _attSpeed: 2
+    _critChance: 30
+    _critDamage: 30
+    _LifeSteal: 40
+    _attackType: 1
+  _name: "\uB808\uC628"
+  _explane: "\uB9C8\uC871\uC758 \uB545\uC5D0\uC11C \uC0DD\uC0AC\uACE0\uBE44\uB97C
+    \uB118\uB098\uB4E4\uB2E4 \uC778\uAC04\uACC4\uB85C \uB118\uC5B4\uC640 \uB9C8\uC871\uACFC\uC758
+    \uC804\uC7C1\uC744 \uC704\uD574 \uC778\uAC04\uACFC \uD611\uB825\uD558\uB294 \uD558\uD504\uB9C8\uC871"
+  _cardCode: 26

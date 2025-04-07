@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Rook
+  m_EditorClassIdentifier: 
+  _cardType: 0
+  _heroSprite: Normal/Rook.png
+  _heroPrefab: Normal/Rook.prefab
+  _info:
+    _hp: 90
+    _att: 8
+    _def: 14
+    _attSpeed: 2
+    _critChance: 8
+    _critDamage: 8
+    _LifeSteal: 10
+    _attackType: 1
+  _name: "\uB85C\uD06C"
+  _explane: "\uC232\uC758 \uC678\uC9C4 \uACF3\uC5D0\uC11C \uC0C1\uC778\uB4E4\uC758
+    \uB3C8\uC744 \uBE8F\uACE0 \uB2E4\uB2C8\uB294 \uC0B0\uC801"
+  _cardCode: 7

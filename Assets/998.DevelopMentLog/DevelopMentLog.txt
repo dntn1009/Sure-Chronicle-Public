@@ -1,0 +1,776 @@
+게임 토대 : 세븐나이츠 키우기, 여러 방치형 RPG 게임
+
+2024-06-11
+Test Scene을 생성하여 Test 구현
+Player Object의 자식 오브젝트에 Player Sprite2D 생성
+카메라의 Rotation에 따라 Player Sprite 2D Rotation 설정하도록 할 예정
+1. UI 비율 및 구조 설정
+   - Android Portrait
+   - 1080 x 1920 해상도 (9 : 16)
+   - Bottom Menu
+2. 2.5D & Camera 구조 구현 대비
+   - Camera Test Controller Script 생성
+   - Camera Orthographic 설정 
+3. Player Sprite 2d & Camera 구현 대비
+   - 임시로 Test Cahracter 구현
+   - Player Test Controller 생성
+4. 타일 팔레트 & 배경에 필요한 Image & Sprite 수집
+
+2024-06-13
+URP로 곡선 셰이더를 통하여 Map 구축을 위하여 3d URP 프로젝트로 변경
+맵을 cyilnder처럼 만들어 2.5d에서 움직임을 구현할때 맵이 돌아가는 느낌이 들도록 구현할 예정
+- 2021.3.16f1으로 URP 구현시 Burst 관련 Error 발견.
+- 2021.3.30f1으로 변경 하여 URP 구축
+1.UI 비율 및 구조 다시 설정
+2.맵과 배경에 곡선 효과
+-맵에 구현 완료. 건축물과 몬스터에도 shader를 적용해야 하는 방법 생각 중.
+3.Test Scene에서 Test를 위한 player Camera 관련 프리팹 및 스크립트 생성
+
+2024-06-14
+Camera Orthographic 에서 Perspective로 변경
+Test하는 Player Prefab의 자식 오브젝트에 Capsule Object를 추가.
+Lighting => ShadowsOnly으로 설정하고, Lit Shader Graph를 추가하여 곡선 커브가 Player Prefab에도 적용되도록 구현하였습니다.
+Z축이 증가함에 따라 Background 가 위로 올라가도록 구현할 예정
+Struct 배치를 위하여 Sprite2D에 Capsule Shadow Only로 Curve Shader를 적용하도록 하였습니다.
+
+2024-06-17
+플레이어 Position의 z축의 변경에 따라 Background의 y축이 올라가도록 구현하여 이동시 배경의 밑부분을 볼 수 있도록 구현하였습니다. (패럴랙스 효과)
+모든 Prefab들은 자식 오브젝트로 sprite2d에 Curve Shader로 되어있는 Material를 가지고 있는 것들을 가지고 있도록 구현하였습니다.
+구현 결과로 원했던 모습이 뽑혀 새로운 Scene을 만들고 맵과 건물들을 추가하고 영웅들을 추가할 계획입니다.
+Player의 Prefab들은 Curve Shader를 적용하지 않은 상태로 구현할 계획 입니다.
+
+2024-06-18
+잘못된 부분 수정
+ - (2024-06-14) Lighting => ShadowsOnly으로 설정하고, Lit Shader Graph를 추가하여 곡선 커브가 Player Prefab에도 적용되도록 구현하였습니다.
+	spriteRenderer로 구현되어있는 Object에 Material을 넣으면 Maintexture를 해당 Sprite의 Texture로 정해두지 않으면 흰색으로 구현되어 있어
+	원인을 찾지 못하여 Capsule에 구현하도록 하였으나 각 SprietRenderer에 헤당 Texture를 가지고있는 Material를 넣도록 구현함.
+
+1. Tile Map & Tile Palette 구현
+ - XZ를 기준으로 하는 Grid 생성
+ - Map은 XZ를 기준으로 구현하였고, Struct 구조물들은 XY를 기준으로 구현할 예정입니다.
+ - Test Scene에서 Tile과 Palette를 이용하여 구현이 정상적으로 되는 것을 확인하였습니다.
+2. Map과 Background는 Stage의 큰 단위 별로 바뀌도록 구현할 예정이므로 맵과 배경의 크기와 콜라이더를 통한 물리 등의 기준을 잡을 예정입니다.
+3. Stage1을 위한 Map과 Background, Struct의 Sprite를 Import 하였습니다.
+4. 필요한 Monster와 카드로 소환할 Character들과 Stage별로 필요한 Map과 Background의 Sprite를 수집할 예정입니다.
+
+2024-06-20
+1.Tile Palette는 Mesh가 없기 때문에 navMesh가 적용되지 않는 현상이 있었습니다.
+ - Tile Palette의 자식 오브젝트에 Plane을 넣어 같은 사이즈로 만들어 Navigation을 Bake하였습니다.
+ - 몬스터가 돌아다니는 경우와 범위안에 들어온 Player의 추적을 위해서 Navigation을 사용하였습니다.
+2.TestPlayer Object의 Sprite 재수정
+3.Sorting Layer로 Sprite를 분류하였습니다.
+4.Monster Prefab 구현을 위해 Sprite를 수집하였습니다.
+
+2024-06-21
+1.Player는 CharcterController과 RayCast를 중점으로 이용해서 구현할 예정
+2. Sturct 배치 Test 완료 팔레트로 구현시 검은 외곽이 보이는 현상이 발생하여 외곽검은색을 처리하지 못할 경우, 팔레트 대신 단일로 구현할 예정
+
+2024-06-24 ~ 2024-07-07
+개인 사정으로 인한 개발 지연 (병원 입실 및 수술)
+
+2024-07-08
+1. SPUM 에셋 추가 (Character 및 Monster Sprite 생성하기 위함.)
+
+2024-07-09
+1. 캐릭터및 몬스터 생성 및 Scene Stage1 관리
+
+2024-07-11
+1.Card - Slot으로 카드로 캐릭터를 불러오기 위하여 스크립트 생성
+2. 기본적으로 필요한 Script 생성 및 구현(오브젝트 풀, 싱글턴, 싱글턴(DonDestroy)
+3.SPUM 외부 에셋으로 Character 생성 에러 해결
+
+//// 개인사유로 지연 ////
+
+2024-07-26
+1. Adapter, Factory 패턴 등 다양한 패턴 숙지 및 적용 테스트
+2. UI 설계 - 보유 중인 히어로, 히어로 소환, 공용 강화, 레이드 Window 및 하단 UI 구현
+3. Adatper를 이용하여 히어로 관련 코딩 구현 예정
+
+2024-07-30
+1. UI 하단 구현 - 하단에 반응하는 Widnow UI 임시 구현
+2. Stage 별로 필요한 Background 구현 - 플레이어 위치에 반응하던 배경을 Camera에 반응하도록 재구현
+3. Facade Pattern으로 Bottom Button 클릭 시 Window UI가 나오도록 구현.
+4. Adapter Pattern을 이용하여 Window UI 관리하도록 구현 중
+
+2024-08-01
+1. adapter, Observer, Facade 패턴을 이용하여 UI 구현하려 하였으나, Facade만으로 구현이 충분히 가능하다고 판단하여 수정 및 재구현.
+
+2024-08-02
+1. Window, Character(Player, Monster) 관련 Composite 패턴으로 구현할 예정.
+2. Card, CardItem, CardSlot, CardInventory Script를 이용하여 Card를 수집하고 강화하며, 카드를 소환하여 싸우는 형식으로 구현할 예정
+3. Card는 Scriptable Object로 구현
+4. CardItem은 보유한 Card를 CardInventory에 UI요소로 정보를 보여주기 위한 Script
+5. CardInventory는 보유한 Card를 CardSlot으로 보여줄 예정
+
+2024-08-03
+1. 다양한 Design Pattern들을 namespace로 관리하여 using문으로 사용하려 하는 과정에서, 많은 스크립트를 생성하는 것을 문제로 생각하고,
+   하나의 DesignPattern 스크립트에 여러 디자인 패턴들을 region을 이용하여 세부적으로 관리하도록 구현함.
+2. Facade Pattern에서 지저분한 메서드들을 정리하여 Window를 출력할 때 하나의 메서드를 이용하도록 재 구현함.
+3. 히어로 카드를 구현하려는 과정에서 유저가 보기에 불편해 보이는 모습들이 발견되어
+   HeroWindow가 담당하는 영웅 관리, 편성 등 다양한 부분들을 세분화하기 위해 UI를 다시 재구현 하려고 함.
+
+2024-08-05
+1. Hero 관리 UI를 구현하였습니다.
+2. 메인 UI의 하단 Button을 클릭 시,  컬러가 변하도록 구현하였습니다.
+3. Hero 관리 UI에서 사용 될 디자인 패턴과 스크립트 구조를 설계하는 중입니다.
+
+2024-08-09
+1. Hero 관리 UI에 필요한 Card, CardData 스크립트를 구현하였습니다.
+- Card는 스크립터블 오브젝트로 구성된 CardData를 이용하여 정보를 표출하는 스크립트를 가지고 있습니다.
+2. SPUM 에셋을 이용하여 필드 위에 나타는 히어로 프리팹을 구현하였습니다.
+- SPUM에서 사용하고 있는 스크립트를 이용하여 만들었던 해당 프리팹들을 건드릴 수 있으므로
+  SPUM에셋에 대한 전반적인 코딩 리뷰를 진행하고 있습니다.
+3. Card에서 해당 히어로의 얼굴을 보여줄 수 있도록 Sprite를 받아오려는 과정에서 하나의 Sprite가 아닌
+   SPUM에서 관리하는 스크립트로 Sprite를 합친 형태로 따로 List 변수로 정리해 둔것을 확인하여
+   정리해 둔 것을 토대로 얼굴을 보여줄 수 있도록 구현 중에 있습니다.
+
+2024-08-17
+1.Firebase를 DB 목적으로 사용하기 결정.
+2.카드 하나를 보여줘야 할 경우 하나의 카드에 담겨있는 부분들 중, 정적과 동적 부분으로 나누어
+  데이터를 관리하려고 함. 이 카드에서 UI부분으로 보여줄 수 있는 부분도 표현하려고 함.
+  유저가 가지고 있어야할 하나의 카드에 대한 정보와 그 카드가 가지고 있어야할 정보와 프리팹을 스크립터블과
+  struct를 이용하여 구현하였습니다. 또한 파이어베이스에서 해당 유저의 정보를 가져오도록 구현할 예정입니다.
+3. Card에 대한 UI부분을 보기 편하도록 개선하였습니다.
+4. Card 스크립트 일부분을 변경되고 추가된 변수 및 스크립트 등을 이용하여 수정하였습니다.
+   - CardData(CardInfo => Stat 관련 부분 struct로 묶어 관리함) 
+	UserCardData(유저가 가지고 있어야 할 하나의 카드 정보) => UserInfo(Card에서 UserCardData를 가져올 때 구조체 값을 여기에 복사함.)
+5. 여러 Hero Prefab 및 Hero Card 등을 만들어 여러 카드들을 만든 후, 작업을 진행할 예정입니다.
+	임시로 버튼을 만들어 카드를 자동 생성하도록 할 예정
+
+2024-08-19
+1. CardData와 User의 gold, jewel을 가지고 있는 구조체 userdata 스크립트를 생성하였습니다.
+2. UserData를 이용하여 HeroWindow에 보유하고 있는 카드를 보여줄 수 있도록 구현하였습니다.
+3. WindowController와 UIManager 스크립트에서 사용하고 있는 디자인 패턴 중 의미가 퇴색된 패턴들을 제거하거나 수정하였습니다.
+4. Data와 Card에서 Initialize 관련 메서드를 구현 및 수정하였습니다. struct의 생성자 생성 부분에 관하여 수정하였습니다.
+5. HeroWindow에서 히어로를 편성하는 부분인 Forming에서는 카드의 정보와 편성 및 제거를 할 수 있도록 하며, List 부분에서는 카드의 정보를
+   볼 수 있도록 구현 중입니다. 현재 구현하려는 계획은 DefineHelper에서 관리 중인 Enum들 중에 CardState를 생성하여 카드 소환, 리스트, 편성 으로 나누어
+   해당 상태별로 카드를 클릭했을때 보여줄 수 있는 반응들을 표시할 계획입니다. 이 계획은 더 좋은 계획을 찾으면 변경할 예정입니다.   
+
+2024-08-23
+1. CardData 및 CardUserData & CardPrefab 등 현재 카드로 보여주고 싶은 히어로 목록들을 만들고 생성하였습니다.
+2. 모든 카드를 표시하도록 DataManager 스크립트에 임시로 데이터를 저장하여 불러오도록 구현하였습니다.
+ 이부분은 파이어베이스를 이용하여 구현할 예정입니다.
+3. SpuM Asset을 이용하여 히어로 프리팹을 구현하였습니다.
+4. 카드의 변동이 있는 동적 Data들을 HeroWindow에서 표출하거나 변경할 때 Update하기 위한 로직을 구현중입니다.
+
+2024-08-29
+1.Hero Window에 카드 리스트를 장착 - 등급 - Star - 레벨 순으로 정렬 시키고 하이어라키의 인덱스와
+ 일치시키도록 정렬시켜 카드리스트의 카드들 정렬하도록 구현 완료.
+2. 가중치 랜덤뽑기 구현 완료 - 랜덤으로 카드를 뽑을때 가중치를 부여하여 랜덤뽑기를 하도록 구현완료.
+3. HeroWindow와 PullWindow의 상호작용 및 뽑기 구현 중.
+4. DataManager에서 Data를 업데이트하거나 본인이 원하는 유저 카드 리스트의 인덱스를 불러와
+   유/무 체크로 새로운 카드 생성 등 Data관련 메서드 구현  완료.
+5. Pull Window에 DrawBox Script & Prefab 구현
+   - 히어로 소환에 필요한 DrawBox 틀 및 기초 구현
+6. DataManager에서 관리하던 HeroWindow method를 Hero Window로 옮기고 이에 따라 필요하던 DataManager의 데이터를
+   프로퍼티로 이용하도록 구현하였습니다.
+7. Pull Window HeroWindow를 구현하는 과정에서 DataManager의 데이터 변화에 따라 Window의 UI 변화가 필요하다고 생각하여
+  Observer Pattern을 이용하여 Data 변화 시 UI 변화를 유도하도록 구현할 예정입니다.
+
+2024-08-31
+1. Data Manager에서 Data 정보가 변동 될때, UI가 변화하는 과정을 보여주기 위해 Observer Pattern을 이용하려 함.
+  이 과정에서 Data Manager에 Subject Interface를 이용하여 변동 시 UIObserver들을 관리하려고 하였는데
+  DataManager에 Observer관리하는 것은 UI목적이 아닌 스크립트 이므로 UIManager에 Subject를 달고 UIManager에서 관리하는
+  Windows UI들을 편하게 Observer로 등록할 수 있기 때문에 UIManager로 Observer패턴을 구현하였습니다.
+2. 기본적으로 WindowController의 Notify에는 WindowUI 필수인 재화 보유를 업데이트 해주도록 하였습니다. override를 통하여
+  Windows 및 UI 별로 기능 하도록 구현하였습니다. 
+  HeroManager에서 Data 변동 시 UI 변화를 주도록 Interface IUIObserverNotify(UserData)에 구현하였습니다.
+  FirstOrDefaul, hashSet 등 CardList와 UserData안에 있는 UserCardDataList를 비교하여 HeroWindow의 카드 UI를 변동시켜 주었습니다.
+3. PullWindow에 일반 소환 및 특수 소환을 할 수 있는 DrawItemBox Prefab을 수정 및 PullWindow의 스크립트를 수정하여
+   카드 소환 관련 부분을 구현하고, Hero Window에서 카드 클릭 시, 카드 강화 및 다른 부가적인 UI를 구현하여 카드와 관련된 부분들에 대한
+   구현을 마치고 필드 위에 배틀 및 다양한 부분들을 구현할 예정입니다.
+ 
+
+2024-09-03
+ 1. HeroWindow 스크립트에 public class SlotClickedEvent : UnityEngine.Events.UnityEvent<Card> { }를 추가하여 List및 Forming
+  오브젝트에서 카드의 클릭 효과를 관리하기 위해 구현하였습니다. 이 과정에서 번거롭거나 구현할 수 없는 부분들이 발견되었습니다.
+  이에 따라 UI Manager에서 관리하고 있던 Windows 배열 안에 있는 HeroWindow를 Singleton을 이용하여 클릭 부분을 재구현하였습니다.
+ 2. UIManager의 싱글턴을 이용하여 HeroWIndow를 가져와 Card 스크립트 안에서 Car Click 시, 보여줘야할 UI구현 완료.
+   여기서 추가해야할 상황은 List의 카드를 클릭 시 정보창 바로 확인하도록 하고 Forming의 카드를 클릭 시 장착 및 정보 버튼이 뜨도록
+   구현할 예정입니다.
+ 3. Forming안에서 Card 클릭 시 필요한 OutLine을 추가하였습니다. 
+  정보 창을 보여줄 Info_Panel을 추가하였습니다.
+
+2024-09-06
+  1.HeroCardInfo의 구현 완료.
+  2.PullWindow(카드 소환 창)에서 카드 소환 시, 카드 소환 연출을 위한 HeroDraw_Window UI 구현 중입니다.
+   - 소환한 카드의 개수만큼 DrawCard(소환 연출을 위한 카드)를 불러와 세팅하도록 구현하였습니다.
+     DrawCard를 클릭하기전 OpenText의 Animation으로 크기가 변하도록 구현하였습니다.
+	 또한 카드를 클릭하면 카드가 뒤집어지고 카드가 공개되도록 Animation으로 구현하였습니다.
+	 DrawCard와 HeroDrawWindow 스크립트를 생성하고 구현 중에 있습니다.
+
+2024-09-09
+	1.PullWindow에서 DrawBox를 통한 Hero 소환 구현 완료.
+	- DrawBox에서 요구하는 보석의 개수가 일치할 경우 HeroDrawWindow창이 열리면서 구매한 카드의 개수만큼 카드가 출력됩니다.
+	 카드를 클릭할 경우, 숨겨져 있던 카드 뒷면이 오픈되면서 카드가 공개됩니다. 이미 구매한 카드는 구매버튼 순간부터 데이터에 적용되어 있습니다.
+	 한번에 열기 버튼이 구현되어있고, 하나씩 클릭하다 모두 열기를 할 수도 있습니다. 모두 열리면 자동으로 닫기 버튼으로바뀌게 됩니다.
+	 UI 및 데이터가 변하도록 구현하였습니다.
+	 DrawBox를 관리하기 편하도록 PullWindow에서 DrawBox를 관리하도록 구현할 예정입니다. 현재 DrawBox 각각 해당 기능들이 구현되도록 해놓았기 떄문에
+	 PullWindow에서 DrawBox를 Instantiate하여 Initiailze()를 통하여 관리할 예정입니다.
+	2.Card Open Animation 구현
+	- 카드를 오픈하는 경우에 재미를 더하기 위해 오픈하는 경우 카드가 뒤집어지며 공개되도록 애니메이션을 구현하였습니다.
+
+2024-09-10
+	1.BoxData ScriptableObject 구현, DataManager에 DrawBox Prefab, BoxData[]를 변수로 저장하여
+	DrawBox의 Initialize() 메서드에 해당하는 BoxData를 _boxData 변수에 저장하여 UI를 변경하고, Button의 onClick메서드를
+	변경하였습니다.
+	2.PullWindow에 List<DrawBox>를 추가하여 관리하도록 구현하였습니다. DataManager에서 불러온 BoxData[]를 PullWindow의
+	ScrollRect의 Content에 생성한 DrawBox들의 data에 적용되도록 구현하였습니다.
+	3.PullWindow의 DrawBox에서 영웅을 소환하는 것 외에 보석을 골드로 교환하는 것도 BoxData를 이용해 구현하였습니다.
+	4.HeroWindow에서 카드의 강화 조건을 충족하면 강화 버튼 클릭 시, 강화 되도록 구현할 예정이며, 골드를 이용하여 레벨이 MAX가 아니면
+	업이 가능하도록 구현할 예정입니다. 해당 과정이 끝나면 필드위에 영웅을 소환하여 라운드 별 몬스터와 싸우는 과정을 구현할 계획입니다.
+
+2024-09-19
+	1. Card의 레벨 업과 카드의 Star가 증가하는 초월 단계를 구현하였습니다.
+		- HeroCardInfo 스크립트에 강화에 필요한 추가 UI인 Upgrade Message를 구현하였습니다.
+		  골드가 부족하거나 맥스치에 도달한 경우에는 강화 버튼이 잠기도록 구현하였습니다.
+		  초월이나 레벨업을 하게 될 경우 필요한 골드만큼 골드가 차감되고 카드의 레벨업이나 초월이 진행됩니다.
+		  이 과정에서 OnEnable에 AddListener를 등록하였지만 중복으로 Add하는 현상이 발생하여 처음 HeroWindow에서
+		  Initialize를 관리하는 메서드에 HeroCardInfo의 버튼 리스너를 등록하도록 구현하여 중복 버튼발생현상을 해결하였습니다.
+		  카드 초월의 경우에는 필요한 카드개수만큼 카드의 카운트를 차감하도록 하였습니다.
+    2. Card를 필드 위에 배치할 경우 카드의 배치 체크가 True가 되도록 구현하고, 배치중 표시 UI를 구현할 예정입니다.
+		- 해당 부분은 HeroWindow 부분의 forming에서 관리할 예정입니다.
+
+2024-09-22
+	1. EquipCard, EquipSlot GameObject 및 Script 구현
+	 - 이제 구현된 카드들을 슬롯에 배치하여 필드 위에 플레이어를 소환하는 것을 구현하기 위해 스크립트와 프리팹을 생성 및 구현하였습니다.
+	   로직 구현중에 있습니다.
+
+2024-09-25
+	1. 카드를 장착하는 부분 구현 완료.
+	 - 영웅 편성에서 카드를 클릭할 경우, 장착 및 정보를 확인할 수 있습니다. 여기서 장착을 할 경우, 슬롯에 배치하는 안내 문구가 뜨도록 구현
+	   하였습니다. 원하는 슬롯을 클릭할 경우, 해당 슬롯에 배치되도록 구현하였습니다.
+	 - Card가 장착되어있는 경우, 카드 이미지에 장착 이미지가 활성화 됩니다.
+	 - 카드가 있는 슬롯에 다른 카드를 장착시키는 경우, 카드 장착 이미지가 바뀌도록 구현하였습니다.
+	 - 카드 장착과정에서 카드데이터의 인덱스 번호를 저장하도록 구현하였습니다. 게임을 첫 실행하게되면 해당 인덱스 번호를 통해
+	   처음 Init부분에서 장착되도록 구현하였습니다.
+	 - 슬롯1 부분은 무조건 히어로 한개가 배치되어있도록 구현하였습니다. 해당 슬롯에 배치된 카드를 클릭하면 장착 버튼이 잠겨있습니다.
+
+2024-09-26
+	1. 카드를 슬롯에 장착하면 해당 카드의 Hero Prefab이 필드에 생성되도록 구현
+	- 임시로 기본 베이스로 소환을 구현하기 위해 DataManager에 게임오브젝트 배열 _heroObjs를 구현하였습니다.
+	  그리고 Slot에도 카드의 GameObject를 받아와 슬롯에 지정된 카드의 Prefab을 DataManager의 슬롯 인덱스에 해당 오브젝트를 참조하였습니다.
+	  또한 Slot에도 GameObject를 참조시켰습니다.
+	  그래서 슬롯 1234에 장착된 카드의 히어로들이 DataManager의 heroObjs 인덱스에 참조되도록 구현하였습니다.
+	  또한 heroObjs의 인덱스가 0번인 Object(Slot1에 배치된 카드의 Prefab)을 카메라가 구현한데로 추적하도록 구현하였습니다.
+	2. Naviagtion 관련 문제 발생
+	- Navigation은 21f 버전 기준에서는 3d에서만 bake할 수 있도록 되어있습니다. 이에 편법을 이용하여 URP로 곡선을 준 긴 큐브 모양의 타일맵 2d의
+		하위 오브젝트에 긴 Plane을 만들어 베이크하도록 하였지만 그림자가 비추면서 어두워지는 현상이 발생하여 2d로 bake할 수있는 방법을 찾는 도중
+		navMeshSurface라는 외부 라이브러리를 이용하면 해결이 되는 것을 확인하였습니다. 여기서 22f버전에서는 AI Navigation을 Pacakage로 개별로 다운받을
+		수 있도록 구현하였고 navMeshSurface인 외부라이브러리까지 포함 시킨 것을 확인하였습니다. 그래서 해당 유니티 엔진 버전을 업그레이드 할지 생각중입니다.
+
+2024-10-03
+	1. Hero Object 움직임 및 관리를 위한 HeroManager 스크립트 생성
+	2. Hero의 마지막 Position 저장을 위해 UserData에 Vector3 자료형 추가
+	3. Hero Object들을 관리하기 위해 HeroManager Object 생성
+	4. Hero들을 관리하기 위한 관련 코드들 구현 중.
+
+2024-10-28
+	1. Navigation 버전 관리
+	 - Navigation 21f 버전 업데이트 대신 유니티 에디터에서 URL 을 입력하여 해당 패키지를 설치하도록 하였습니다.
+
+2024-10-29
+	1. Navigation은 패키지를 깃허브에서 업데이트로 받아와서 Surface2d를 이용하여 바닥 타일맵에 navigation을 적용하였습니다.
+	2. DataManager에서 관리하던 HeroSlot의 EquipSlot[](장착한 카드 관련 배열)을 HeroManager에서 따로 관리하도록 나누었습니다.
+	 - DataManager에서 불러온 데이터들을 처음 이용하거나 플레이 중 이용할 때 사용하는 것이므로 따로 관리하도록 하였습니다.
+	3. 유니티 에셋스토어에서 이용하고 있는SPUM 에셋에서 만든 캐릭터들은 HeroObj라는 스크립트를 소유하고 있는 상태이므로,
+		해당 스크립트를 상속받은 HeroController를 이용하여 캐릭터들의 움직임을 구현하는 중입니다.
+
+2024-10-30
+	1. HeroController 스크립트에서 해당 히어로의 위치를 결정하기 위해 필요한 SlotIndex와 해당 히어로의 카드에서 가지고 있는 카드의 능력치들을
+	   불러오도록 카드의 히어로가 생성되는 시점에 Initialize()메서드를 구현하였습니다.
+	2. HeroController에서 상속받는 PlayerObj의 스크립트에서 불필요한 변수들이 인스펙터 창에서 보여 불필요한 부분은 주석처리로 변경하였습니다.
+	3. HeroManager에서 Hero를 불러올때 필요한 ChangeHeroObjs()메서드의 매개변수에서 불필요하거나 이상한 부분을 수정하였습니다.
+	4. 히어로의 움직임 관련으로 Bool _isAuto를 UserData에 새로 변수를 추가하여 auto가 true인 경우 자동으로 사냥하도록 하기위해 추가하였습니다.
+
+2024-10-31
+	1. Hero들이 배치된 슬롯에 따라 배치되도록 구현하고 있습니다.
+
+2024-11-01
+	1. Hero가 교체되지 않고 슬롯에서 삭제되는 경우 이전 히어로 오브젝트가 지워지지 않는 현상을 수정하였습니다.
+	2. HeroManager 스크립트에서 오브젝트들이 추적할 트랜스폼을 HeroController변수로 참조해 받아올수 있도록 변경한 후 각 HeroController의 변수로 옮기도록 수정하였습니다.
+	3. Hero들이 각 SlotIndex에 따라 자리가 배치되도록 기초적인 구현을 하였습니다.
+	4. Slot Index가 0번인 Hero가 움직이게되면 이 hero를 따라서 움직이도록 구현하였습니다.
+	   -움직이는 방향이 -+에 따라서 LocalScale을 바꿔 바라보도록 구현하였습니다. 0을 제외한 나머지 index들은 0의 움직이는 방향에 맞춰 바라보도록 구현하였습니다.
+	5. Index가 1,2,3인 Hero들이 0번이 바라본 방향에 맞춰 줄을 왼쪽이나 오른쪽으로 움직이도록 구현할 예정입니다.
+
+2024-11-04
+	1. Hero들이 왼쪽 오른쪽 움직임에 맞춰 방향을 바라보도록 구현 완료.
+	2. JoyStick으로 히어로들을 움직일 수 있도록 JoyStick Asset을 이용하여 구현 완료.
+	3. heroController에서 애니메이션 관련 구현을 위해 PlayerObj 스크립트를 비롯하여 애니메이션 관련 부분 구현 완료.
+	   - 이동 중이거나 멈추는 경우 애니메이션 구현 완료.
+
+2024-11-05 ~ 2024-11-06
+	1. 캐릭터 정보창 UI 초기 구현 완료.
+	2. 스테이지 Bar와 현재 스테이지 텍스트로 UI 구현
+	   - PrograssBar Script 생성하여 현재 스테이지 / Max 스테이지 의 비율을 이용하여 현재 어느 스테이지에 와있는지 UI 구현 완료.
+	3. UI에 서순을 맞춰 RayCast를 쏴서 UI구별 없이 조이스틱을 이용하도록 구현함.
+	4. Auto활성화 시 자동으로 몬스터를 추적하여 공격하기 위해 AutoButton을 구현 완료.
+	   - AutoButton 활성화 시, Refresh Image가 회전하도록 Animation 구현. Auto의 참 / 거짓을 통하여 플레이어의 움직임에 영향을 줄 예정입니다.
+	5. 보스 소환 UI 구현
+	   - 일정 수치의 몬스터를 처치 시, 해당 스테이지의 보스를 소환할 수 있는 Button을 구현하였습니다.
+	6. Map (Navgation 2D) & Monster Manager(해당 스테이지) 등을 개별 Scene에 구현하기 위하여 나누었습니다.
+	   - 해당 부분들을 나누어 관리하여 효율적으로 메모리를 할당하려고 하였습니다. LoadSceneMode.Additive과 Addressable을 이용하기 위해 구현 중입니다.
+	7. Top UI 기초 및 임시 구현 완료.
+
+2024-11-08
+	1. 카메라 컨트롤러 Update -> LateUpdate 변경
+	2. 히어로 컨트롤러 움직임 및 애니메이션 관련 뭉쳐있던 코드들을 Update 또는 FixedUpdate로 분할하여 메서드 구현
+
+~2024-11-12
+	1.Hero 오브젝트가 Auto의 True/False에 맞춰 움직이도록 구현
+	2.몬스터 오브젝트들 구현 및/몬스터 매니저, 몬스터 데이터(스크립터블) 스크립트 구현
+	3.맵에 NotWalkable 타일맵 생성
+	4.XZ에 Y축으로 서있는 타일맵 구현 완료(이미지의 Pivot 변경 및 xz 그리드에 xy축으로 변경 후 커스텀으로 로테이션을 줌.)
+	5.사용하고 있는 셰이더 그래프에서 테두리가 검은색으로 보이고 투명해지지 않은 점이 발견되어 수정 중
+
+2024-11-13
+	1. 셰이더 그래프에서 알파값을 이용하여 스프라이트의 외곽 테두리가 투명해지도록 구현
+	2. MonsterManager스크립트를 싱글턴으로 구현하고 그안에 몬스터의 Prefab 변수와 Monster를 오브젝트 풀링하기 위한 monPool 참조 변수로 구현.
+	3. Lighting을 SkyBox에서 Color로 바꿔 균일한 라이트를 주기로 함., Camera의 배경 타입을 Soild Color로 변경 후 어두운 컬러를 이용하였습니다.
+	5. Monster Controller와 Navigation 2d를 Monster object에 추가하여 구현 준비 중입니다.
+
+~2024-11-17
+	1. Monster Manager에 몬스터 소환 위치 정보와 움직임 범위 조정을 위한 변수 등 기초적인 정보 구현.
+	2. Monster Controller에 State Pattern를 이용한 FSM 기초 뼈대 구현
+	3. Monster Controller와 MonsterManager사이에 필요한 메서드 및 변수 구현
+2024-11-19
+	1. Monster Spawn 스크립트 생성 후. 소환될 중심구역에 object 생성 후, 구역에 생성된 몬스터 개수와 범위 등을 관리하도록함.
+	2. Monster Controller가 Monster Spawn의 정보를 가지고 있는 Monster Manager를 이용하여 몬스터를 소환할 때 Controller에 필요한 값 부여해주도록 구현함.
+	3. Monster Manager에서 필요한 정보들을 종합하여 코루틴을 이용하여 몬스터를 소환할 구역에 몬스터를 소환하도록 구현함.
+2024-11-20
+	1. Monster Spawn하였을 경우, 정해진 구역에서 정해진 반지름 원안에 랜덤으로 소환되도록 구현 완료.
+	2. Monser와 Player의 Shader-Graph를 변경하여 몬스터는 따로 설정한 Shader-Graph가 적용된 머터리얼을 적용하지않아 붕뜨는 현상 해결
+	  - 이부분에서 Player는 굳이 바꾸면 이미지가 어긋나서 캐릭터가 분리되는 현상을 발견하여 일단 미적용하고 몬스터만 적용하기로 함.
+	3. Sprite2D Blend라는 Shader-Graph를 새로 만들어서 몬스터에 다시 적용하였습니다.
+	4. UnityEditor를 이용해서 몬스터 프리팹의 하위 오브젝트들이 가지고 있는 SpriteRenderer에서 Material이 SpriteDiffuse인 경우,
+		MonSpriteDiffuse로 변경하도록하는 Editor를 구현 후, 몬스터에 적용하였습니다.
+		- 해당 결과로 몬스터가 멀리서도 커브가 적용된 월드맵에 몬스터가 붙어있도록 구현되었습니다.
+	5. Unity Editor를 이용해서 Player의 SortingLayer & Order In Layer변경을 한번에 할 수있는 Editor를 만들어 변경하였습니다.
+		- 건축물과 Player의 Sorting Layer를 같게 하여, Player위치에 따라 건축물이 보이거나 가려지도록 구현하였고, 플레이어가 건축물 뒤에있을 경우,
+		  건축물의 컬러 알파값을 변경하여 반투명으로 변하도록 구현하였습니다.
+	6. TileMap에서 개별 타일들을 건드려 플레이어의 히어로 오브젝트와  겹쳐지면 개별 타일의 오더 레이어와 컬러의 알파값이 변하도록 하는 스크립트를 구현.
+
+~2024-11-22
+	1. 현재 확인 결과 같은 Shader-Graph를 가진 Material를 쓰는 몬스터는 겹쳐도 z축에 따라 보이는게 다른 것을 확인하였고, 이에 타일맵의 문제가 있음을 확인하였습니다.
+	2. 이에 개별 Object들을 만들어 거기에 material을 적용해 구현할 지 고민 중에 있습니다.
+	3. 그동안 고민해왔던 SortingLayer와 OrderInLayer의 문제를 Tile Map에 의한 것이 맞음을 확인하였고 Chunk로 두지 말고 Individual로 바꾸어 개인의 Z축을 이용하도록
+		구현하여 제대로 깊이감이 생겨 히어로 의 앞 뒤 로 움직일때 가려지거나 보이도록 구현이 되었습니다. 이에따라 히어로가 건물 뒤로가면 반투명으로 변하도록 구현할 예정입니다.
+
+2024-11-23
+	1. 건축물이나 나무 같은 배치형 타일 오브젝트들의 뒤에 히어로가 있을 경우 반투명으로 보이도록 구현하였습니다.
+		-이 건축물 배치 타일맵에 필요한 셰이더 그래프를 Monster 오브젝트의 셰이더그래프를 기반으로 구현하였습니다.
+			BuildingTile_Blend로 지었습니다. 또한 Hero오브젝트의 Position을 계속 받기 위해 블랙보드에 Vector3노드를 추가하였습니다.
+			이 HeroPosition은 스크립트를 이용하여 계속 슬롯 0번의 히어로 오브젝트를 받아오도록 구현하였습니다.
+			이 heroPosition과 이 Material를 쓰고있는 오브젝트의 월드포지션을 Distance Node로 비교하여 SmoothStep으로 속도를 조절하여 LerP로 명암을 조절하도록 하였습니다.
+			그런 후에 Multiply를 이용하여 Sprite2D의 외곽 테두리의 투명도를 유지하기 위해 SampleTexture 2d의 alpha값과 합쳐 Fragment의 Alpha값에 입력합니다.
+
+	2. HeroPositionUpdater 스크립트를 생성하여 슬롯 0번의 Hero 오브젝트 Transform을 지정하여 해당 Transform의 Position을 배치형 타일맵의 Material에 설정하도록 구현하였습니다.
+
+2024-11-25
+	1. Monster Spawn에서 배열을 이용하여 여러 몬스터를 Spawn구역안에서 생성시키도록 MonsterManager를 포함해서 수정하여 구현하였습니다.
+		- 배열 index별로 생성된 몬스터 수를 체크하여 지정한 최대 몬스터 수 만큼 생성 시킵니다.
+2024-11-26
+	1. Monster가 움직이도록 구현 완료.
+	2. Monster가 FSM STATE에 맞춰 움직이거나 멈추도록 설정 (Navigation SetDestination)
+		- Idle, Chase에 이어 MoveState 추가하였습니다.
+		  Idle과 MoveState를 연동시켜 정해진 시간동안 움직이거나 멈추도록 구현하였습니다.
+		  Player가 몬스터가 가지고있는 콜라이더 구역안으로 진입하거나, 공격을 하면 Player을 타겟으로 삼고 공격하도록 구현할 예정입니다.
+	3.Monster가 움직이는 방향에 맞춰 로컬스케일을 변경하였습니다.
+2024-11-27
+	1. Monster와 Hero Object에 Rigidbody 및 Collider 세팅을 위한 유니티 Editor Script 구현.
+	2. Monster Object의 Nav Mesh Agent에서 그대로 지나가게 하기 위해 None으로 설정
+		- Obstacle Avoidance의 Quality를 None으로 설정.
+	3. Monster와 Hero Object의 Rigidbody 및 Collider를 조정하여 구현 완료.
+
+2024-11-28
+	1. Monster와 Hero 오브젝트들이 자신의 반경안에 있는 몬스터를 체크해 공격하기 위한 Collider와 AttackAreUnitFind 스크립트 구현.
+	2. AttackAreUnitFind를 공용으로 사용할 수 있도록 PlayerObj 스크립트를 상속받은 점을 이용해 구현하여 몬스터와 히어로 둘다 가능.
+
+2024-11-29
+	1. Monster의 State에서 Chase에 연결되도록 구현 완료.
+	2. IState를 <T>로 재구현하여 Player나 Monster나 모든 부분에서 사용가능하도록 재구현하였습니다. FSM클래스를 이용하여 사용하도록 구현하였습니다.
+	3. 재구성된 State로 몬스터 FSM STATE 구현.
+	4. Hero에게 피격되거나 자신의 범위안에 들어온 첫 Hero를 지정하여 Chase State로 가도록 구현하였습니다.
+
+2024-11-30
+	1. AttackAreUnitFind와 Sphere Collider를 가지고 있는 object를 생성하여 hero와 Monster 프리팹에 추가하도록 하는 Unity Editor을 구현하였습니다.
+	2. Hero와 Monster Object에 1.에서 설명한 object의 AttackAreUnitFind를 각 Controller에 연결하였습니다.
+	3. FSM STATE 중 Chase State를 구현하였습니다.
+		- Chase State에서 자신의 영역 안에 벗어나면 targethero를 제거하고 IdleState로 전환하도록 구현하였습니다.
+		  구역 안에 있으면 히어로를 추격하도록 구현하였습니다.
+
+2024-12-01
+	1. Chase - Attak State 연결 및 구현.
+
+2024-12-02
+	1. Monster와 Hero의 데미지를 입히는 메서드와 애니메이션 과정에서 얻게될 공격 과정 기초 메서드를 구현하였습니다.
+	2. Monster FSM STATE에 필요한 추가 구현을 하였습니다.
+	3. Hero Controller에도 FSM을 추가하여 AutoButton 활성화 시, FSM STATE대로 움직이도록 구현하였습니다.
+		- Idle, Search, Move, Attack으로 구현하였으며, Auto가 비활성화 인 경우, Idle에서 Move로 옮겨지며
+		활성화 인 경우 Serach에서 Move로 옮겨지도록 구현하였습니다. 이 과정에서 DataManager와 UIManager에서
+		메서드 수정사항이 있었습니다.
+	4. Hero Obj들에 추가적으로 Nav Mesh Agent 컴포넌트를 추가하여 Auto 활성화 시, Navigation에 맞춰 움직이도록 구현하였습니다.
+
+2024-12-04
+	1. HeroController가 AutoBtn의 활성화에 따라 움직이도록 구현하고 있습니다. AutoBtn이 비활성화인 경우 Slot 0을 움직이고 나머지 슬롯들이 추적하여 따라오도록 구현하였습니다.
+	2. HeroController와 FSM STATE를 적용하여 STATE를 변경해가며 구현하여 불필요한 변수와 메서드 및 연산처리를 최소화 하도록 구현하였습니다.
+		- 중복된 부분들과 번거롭게 작업하거나 연산한 메서드들을 중복 최소화 및 간결한 메서드로 변경 및 구현하였습니다.
+		 이로인해 코드 가독성이 높아졌으며, 번거롭게 구현하던 부분들을 최소화하게 되었습니다.
+	3. HeroController에 NavMeshAgent를 추가하였습니다.
+		- 퀄리티를 None으로 하여 부딪힐 경우 움직임에 방해를 받지 않도록 하였습니다.
+		 AutoBtn이 활성화 된 경우, Navigation에 맞춰 움직이도록 하기 위해 추가하였습니다.
+	4. Hero FSM STATE에서 IsAuto 활성화 시, SlotIndex == 0인 Hero가 제일 가까운 Monster를 타겟으로 삼아 이동하고 나머지 Slot Hero들이 따라가도록 구현하였습니다.
+	5. Hero Object들의 Nav Mesh Agent를 수정하였습니다.
+
+2024-12-05
+	1. HeroStat에 치명 확률, 치명 배율, 공격 속도, 생명 흡수 등 스텟 추가 구현
+	2. AttackAreUnitFind에 있는 UnitList를 HashSet으로 변경하여 Hero와 Monster의 Attack State 구현에 필요하도록 구현.
+	3. Hero Auto Btn 활성화에 따라 Attack State 이동 및 구현 완료.
+	4. 추가된 스텟으로 변경해야할 UI 구현 완료.
+
+2024-12-06
+	1. Hero FSM STATE 중, AttackState 구현 완료.
+		- Hero가 Attack Anim 과정 중, Animation Event를 통하여 몬스터에게 데미지를 입히거나, 동작이 끝나고 Idle Anim으로 변경되도록 추가 구현 필요.
+	2. Hero FSM 진행 과정 중, 구조가 겹치거나 꼬여 STATE가 여러번 반복하여 버벅 거리는 움직임을 발견하여 수정 및 재구현을 통하여 문제 해결.
+	3. Monster FSM 진행 과정 중, 히어로는 영역 밖에서 몬스터를 타격하지만 몬스터는 영역 밖으로 나가면 타겟을 null로 두고 영역을 돌아다니도록 구현하는 부분에서
+		구조가 꼬여 심하게 버벅이는 현상을 발견하여, &&를 이용하여 추가적으로 자신을 타겟으로 두는 hero의 UnitList에 자신이 있으면 영역 밖을 나갈 수 있도록 허용하여 해결함.
+
+2024-12-09
+	1. Object들의 Animator가 있는 UnitRoot 자식 오브젝트에 AnimationController 스크립트를 추가하는 에디터 스크립트를 구현하였습니다.
+	2. Object들에 AnimationController를 추가하여 Animation 중 Attack 관련 Animation에 Event를 추가하였습니다.
+		- AnimEvnetAttack()과 AnimEventAttackFinished()를 Attack_Bow,Magic,Normal에 Event를 추가하여 구현하였습니다.
+	3. Hero와 Monster들의 Attack State에서 자연스럽게 다른 State로 전환되도록 구현하였고, Hero는 attackSpeed에 따라 Monster는 2초마다 공격하도록 구현하였습니다.
+	4. 무기 별로 공격 Animation이 차별되어 있는데 Bow Attack Animation만 나오는 것을 발견하여, 추가적으로 AttackType Enum을 추가하여 각 Object에 맞게 공격하도록 구현하였습니다.
+
+2024-12-11
+	1. Hero Attack State에서 버벅이거나 Idle 상태로 멈추는 현상 해결 및 어택 쿨타임 속도 조정
+	2. Auto활성화 시, 움직일 때, 좌우 모습 변동 안되는 모습 해결
+
+2024-12-13
+	1. Update와 FixedUpdate에서 무분별한 State 전환으로 인해 코드의 복잡성과 가독성이 매우 어려워졌고 이에따라 코드의 구조를 수정하였습니다.
+		-FSM에서 FixedUpdate의 사용을 하지 않도록 제거하였습니다. Fsm의 Update 부분에서는 상태 전환 및, 애니메이션 호출, 입력 처리등 이것만을 담당하도록 재구현하였습니다.
+		FixedUpdate가 필요한 경우에 대해서는 따로 Controller의 내부안에서 담당하도록 구현하였습니다.원래 구현해야 했던 방식인 물리연산, 위치이동만을 담당하도록 구현하였습니다.
+		이에따라 부자연스럽게 움직이거나 버벅이던 애니메이션 움직임, 그리고 프레임이 버벅였을때, 애니메이션이 멈추는 등의 행위를 방지할 수 있도록 구현하였습니다.
+	2. Hero Controller와 Fsm에서의 Attack State의 전환 및 구현을 다시 구현하였습니다.
+
+2024-12-16
+	1. Monster Stat 구현
+		-DataManager에 스테이지와 라운드별로 강해지는 몬스터들의 Base Stat을 구현하였습니다. DefineHelper에 MonsterType을 설정하여
+		해당 설정별로, 스테이지와 라운드별로 몬스터가 강해지도록 구현하였습니다.
+	2. Hero Stat 관련 구현
+		-HeroController를 Struct에서 Class로 수정하여 Struct에서 최대HP를 받아와서 사용하지 않고, Class로 Hp를 직접 참조하여 사용하기 위해
+		수정하려고 합니다.
+	3. EnforceWindow 구현 및 SharedEnforceData - StageData를 UserData에 추가, Monster Stat Initialize Setting
+		-장착한 카드들이 필드 위로 소환되었을 때, EnforceWinodw에서 강화시킨 데이터들을 불러오기 위해 SharedEnforceData를 구현하였습니다.
+		StageData를 이용하여 해당 스테이지 UI와 몬스터 Stat을 설정하기 위해 스크립트 추가 후 UserData에 추가해 구현하였습니다.
+		DataManager에 있는 MonsterBaseStat과 StageData, MonsterController에 있는 MonsterType을 이용하여, Monster Stat을 설정하도록 구현하였습니다.
+
+2024-12-18
+	1. PublicCost 스크립트를 생성 및 구현하여 카드 레벨 및 초월을 하거나 공용 레벨을 강화할 때 필요한 비용의 공통적인 비용부분을 정하였습니다.
+		- 이부분은 DataManager에서 관리하여 수정이 필요할 경우는 빌드 시에 관리하도록 할 예정입니다.
+	2. Enforce Window UI 수정 및 Enforce List 구현
+		- Enforce Window를 최신 WindowController에 맞춰 재구현하였습니다. 또한, EnforceList 스크립트를 생성하여
+		공용 강화가 필요한 List들에 스크립트를 추가하여 관리하도록 하였습니다.
+		DefineHelper에 EnforceListType을 추가하여 EnforceList 스크립트를 추가한 Object에서 자신의 Type을 설정하도록 하였습니다.
+	3. UserData의 모든 부분들을 Struct에서 Class로 수정하였습니다.
+		-수정하게 되면서 불필요하게 붙여넣기 형식으로 구현한 부분들을 지우고, 참조하여 추가하는 형식으로 구현하였습니다.
+	
+2024-12-19
+	1. EnforceList에서 강화 클릭 시, 해당 Enforcedata의 능력치 강화 구현 완료.
+	2. RaidWindow 최신 UI에 맞게 구현완료.
+	3. RaidWindow의 RaidList Object 및 Scirpt 구현 완료. & Raid에 필요한 TickData 스크립트 및 DefineHelper에 RaidType구현
+		- RaidList에서 RaidType에 맞춰 Ticket이 있는 경우, 해당 RaidMap에 이동하기 위한 구현 완료.
+		 자정이 지나면 Count가 하나씩 추가할 예정.
+
+2024-12-20
+	1. 처음 게임 실행 시 나오는 IntroScnene 생성
+	2. Project Setting에서 Company 설정, Firebase Console 구현
+	3. Firebase를 Unity와 연동, Package 선택 고려 중.
+
+2024-12-22 2024-12-24
+	1. Intro Scene 생성.
+	2. Intro Scene의 UI 구성 및 Canva 사이트를 이용하여 무료 게임 배경 이미지를 얻어 사용.
+	3. 제목 과 권리, 버전을 나타내는 Text 세팅 및 TextMeshPro Font로 제주할라산 폰트를 제목에 적용.
+	4. Google 로그인을 위한 Button 생성.
+	5. Google Play Console 개발자 계정 생성 및 Unity KeyStore 생성 후, Keytool을 이용하여 파이어베이스에 sha 입력.
+	6. 파이어베이스에 Auth기능을 Unity에 적용.
+	7. Google Play Login기능이 있는 Package를 적용.
+	8. 구글 플레이 전용인 .abb 확장자로 빌드 시, 오류 발견.
+	9. 빌드 에러를 고치기 위해 여러 다양한 수정 결과, 타겟 레벨을 조정한 것을 마지막으로 빌드에 성공하였고, 이에 구글 로그인을 활성화 할 계획.
+
+2024-12-25
+	1.Google Play Console 본인 확인 진행 및, 앱 번들 제출 등, 게시하기 위한 준비 마침.
+	2.Ingame Scene에서의 Top UI들을 구현 하였고, 필요한 Window UI들을 위해 스크립트 추가, 구현 및 UI Manager 수정 완료.
+	3.Google Cloud PlatForm 등록 완료.
+
+2024-12-29
+	1.Google Play Console과 Google Cloud Platform, Firebase를 이용하여 구글 게임즈 서비스 로그인을 구현함.
+	- GPGS의 0.11과 0.10 버전을 이용하였으나, 작업 도중 빌드가 안되는 원인이 버전이 낮은 것을 이유로 2.0버전으로 GPGS 버전을 업데이트하여 임포트함.
+	하지만 이 과정에서 21.3.30f의 내부 sdk jdk gradle이 안맞는 상황이 발생하여, 22.3.55f1으로 에디터 버전을 업그레이드함.
+	빌드 에러가 다시 발생하는 것을 확인하였고, 여러 문제를 해결한 방법을 찾아 적용해 보는 와중, Template에 특정 글을 붙여넣기 하여 빌드에 성공함.
+	빌드에 성공한 후, 복잡해진 Google Play Console과 GPGS V2로 바뀌면서 달라진 메서드들, 그리고 구글 로그인 대신 플레이 게임즈로 사용자 설정을 바꿔야하는 점.
+	등을 여러 에러를 겪어가면서 발견하고 결국 구글 플레이 게임즈 로그인에 성공하고, 해당 계정을 파이어베이스에 등록하는데 성공함.
+	이 과정에서 Google Play Console에 첫 등록한 앱에서 사용한 패키지 네임 등, 엮어져 있는 게 많아 다시 새로 만들기 위해 만든 앱에서 여러 오류를 겪어 곤란한 상황이 빈번하였음.
+	이 과정은 4일에 하루 10시간을 쏟아 부어도 빌드과정이 느려 시간이 많이 소모되었다.
+
+2024-12-31
+	1.firebase RealtimeDatabase를 이용하여 유저데이터를 사용하도록 구현.
+	2.IntroScene의 UI를 수정.
+	- 새로운 계정으로 로그인 시, LoginBtn 활성화 Or 이미 로그인 된 경우, TouchScreenText 활성화 하도록 구현.
+	3.Github branch 생성 과정 및 커밋 과 풀 gitignore을 미숙하게 다뤄 이리저리 꼬인 상태인 것을 확인하여, 깃허브의 데이터를 수정할 계획.
+
+2024-01-02
+	1.이미 앱을 실행 후, 로그인한 이력이 있으면 화면 클릭 시, 인게임 씬으로 넘어가야 하지만 안넘어가지는 문제 해결.
+	2..데이터를 얻은 후, UI및 생성이 되도록 순차지향적으로 코드 개선.
+	3. 받은 데이터로 앱이 정상적으로 실행되는 지 유니티 에디터에서 테스트 후, 정상 작동 되었으나, apk 실행 후, IngameScene에서 강제종료되는 현상 발생.
+
+2024-01-03
+	1.앞으로 Android를 연결하여 Build and Run을 이용하여 테스트할 계획이므로 Android LogCat Package를 Install하여 Log를 확인하려고 하였습니다.
+	2.인게임 씬으로 넘어갔을때 종료되는 이유를 알고 해결하였습니다.
+		- GameObject나 UI를 조작할 경우 멀티스레드로 작업하는 경우 문제가 생길 수 있는 것을 알게되었습니다.
+		그래서 멀티스레드에서 실행하는 경우, UnityMainThreadDispathcer라는 Script를 생성 후, 인터넷에서 알게된 스크립트 내용을 복붙하여 UI 부분을 메인스레드로 작업을 보내도록 구현하였습니다.
+		이 부분은 Graphic Device is null과 TMPRO AWAKE()에러 등을 확인하면 이것이 문제일 것이라는 것을 알 수 있게되었습니다.
+	3.처음 게임을 실행하여 Scene이 나왔을 때 강제 종료 현상은 없지만 에러가 발생하는 것을 보았고, 원인을 파악하여 해결하였습니다.
+		- GetGpuPixelFormat: No map for format: 0x38 에러는 특정 GPU 픽셀 포맷을 처리하지 못하는 것을 나타내며
+		Memory Layout Input Parameter Validation Failed 에러는 그래픽 메모리 레이아웃 초기화 시 실패했음을 나타냅니다.
+		Fail to allocate (X x Y) layer count 이것 또한 그래픽 버퍼 할당 실패와 연관되어 있었습니다.
+		Other Settings의 Graphics API의 AUTO를 해제하면 Vullkan이 맨 위에 사용되어 있는 것을 제거하고 OPGL을 이용하도록 하여 해결하였습니다.
+
+~2024-01-07
+	1. GameSceneManager에 씬 전환에 필요한 Loading과 씬에서 무슨 행동을 할때 기다리기 위한 Loading UI를 구현하였습니다.
+	- 처음 Initialize()메서드들을 실행할 때 기다리거나 어떠한 행동을 할때 기다리거나 그리고, 무슨 행동을 할때 에러가 발생하면 필요한 Loading과 씬을 전환할 때 이용하는 Loading창을 구현하였습니다.
+	2. 씬 전환을 하고 난 후, ScneLoaded += 를 이용하여 씬을 실행하고 난후 처음 실행되야할 부분들이 실행되도록 구현하였습니다. 
+	- 각 씬 별로 실행해야 되기 때문에 interface를 이용하여 Scene마다 실행 된 후, interface의 Method를 가지고 있는 스크립트에 적용 시켜 두었습니다.
+	3. 씬을 전환할 때 팁을 알려줄 수 있도록 Tip부분을 파이어베이스의 리얼타임 데이터베이스에서 가져와 로딩창에 띄우도록  구현하였습니다.
+	4. 구글플레이게임즈의 유저닉네임과 이미지를 가져와 UI에 적용시키도록 하였습니다. 또한 인게임 씬에서의 상단 UI부분이 구현되도록 세팅하였습니다.
+	5. 새로운 계정에 데이터를 부여하거나, 데이터가 변동하는 상황에 맞춰 데이터가 갱신되거나 생성되도록 구현하였습니다.
+	6. 인앱 결제를 하기 위해 PullWindow에 현금 결제로 쥬얼을 만들 수 있도록 BoxData 및 DrawBox 스크립트 부분과 DataManager 부분을 수정하였습니다.
+	7. GameSceneManager와 DataManager를 중심으로 게임이 진행되게끔 하였습니다.
+	8. 인터넷 연결이 끊기는 것을 확인하기 위해, 5초마다 인터넷 연결이 잘 되어있는지 확인하는 코루틴을 구현하였습니다.
+	- 또한, 데이터를 저장하지 못하였거나, 데이터를 저장하는 도중에 에러가 생기거나 연결이 끊기는 경우, 재시도 로딩 창을 하도록 구현하려 했으나, 일부 구현하고 수정 중에 있습니다.
+
+2024-01-09
+	1. Monster& Tile & Strcut Sprite Package Import
+	2. Stage Scene Map(Tile Palette)과 몬스터 설정 구현 완료.
+
+2024-01-11
+	1.상점에 광고보고 보석 얻기 박스 구현.
+	2.Gold, Jewel을 얻기위한 Raid Scene 구현 및 Raid Map 구현.
+	3.Setting에 필요한 UI 구현 및 일부분 구현
+
+2024-01-14
+	1. AdminScene 생성 및 UI 구현
+	- 쿠폰 발행 및 메시지를 유저들에게 보내기 위하여 제작된 Scene입니다. 해당 씬으로 유저들에게 선물이나 쿠폰을 발행해 보낼 예정입니다.
+	2. Message 관련 UI 및 스크립트 구현
+	- DataManager에서 Twindowcontroller를 사용하는 스크립트 들의 Operate()(초기 실행 메서드)를 Firebase의 Message관련 데이터를 받아온 다음에 실행되도록 구현하였습니다.
+	MessageData를 파이어베이스에서 가져와 DataManager에 List로 관리하도록 구현하였습니다.
+	MessageData에서 파이어베이스의 자신의 message userid에 있는 메시지들의 key관리를 위해 수정하였습니다.
+	MessageUI의 필요 부분을 스크립트에서 구현하였습니다.
+	3. EnforceWindow에서 강화할 때, 파이어베이스에 저장이 안되는 현상 해결
+	- 데이터 저장되는 부분이 누락되어 있는 것을 확인하여 해결하였습니다.
+
+2024-01-15
+	1.AdminScene 및 관련된 UI & Script를 Package하여 다른 Project에 임포트하여 관리자 앱을 만듬.
+	-Message와 쿠폰이 파이어베이스에 적용되도록 구현 완료.
+	-Admin 로그인은 관리자 이메일에 로그인 되어야만 가능하도록 구현하였습니다.
+
+2024-01-20
+	1.AdminManager 프로젝트에서 쿠폰 생성 시, 생성된 쿠폰을 확인하고 삭제할 수 있도록 UI 추가 및 스크립트 구현
+	2.CoupData 스크립트를 생성하여 쿠폰 생성 시, 유저 아이디를 List<string>에 저장하여 파이어베이스 json에 담을 수 있도록 구현
+	- 사용자가 쿠폰을 등록하게 되면 파이어베이스의 해당 쿠폰코드안에 유저 아이디가 리스트에 등록되어 중복 사용을 못하도록 구현함.
+	3.MessageData를 이용하여 메시지를 개별로 받거나 모두 받을 수 있도록 구현하였습니다.
+	- 메시지 버튼을 클릭하여 메시지 창이 켜질 때, 새로 메시지를 받을 수 있게 업데이트 하도록 구현하였습니다.
+	4.Coupon을 등록할 때, 유저는 List부분에 자신의 이름만 Write할 수 있도록 파이어베이스 규칙을 수정하였습니다.
+	5.쿠폰 등록 시, 안내 문구를 안드로이드 Toast를 이용하려 하였으나 적용이 안되는 것을 확인하고 수정중에 있습니다.
+
+2024-01-21
+	1 구글플레이콘솔 업적에 업적을 추가하였습니다.
+	- 추가 후, 새로운 업데이트 리소스를 적용하고, force resolve 하였습니다.
+	2.새로운 UI ICON을 이용하여, UI를 변경하였습니다.
+	3.업적 창을 띄우도록 구현하였습니다.
+	-빌드 후, 에러가 나는 것을 확인하였고, 에러를 확인하여도 관련이 없어보이는 에러인 것 같아
+	서칭을 통하여 확인한 결과, gpgs support 부분에 editor 체크 외에 안드로이드가 체크되지 않아 생긴 현상이였습니다.
+	해결 후, 업적 창이 뜨는 것을 확인하였고, 각 업적에 필요한 행동 시에, 업적 stack을 추가할 수 있도록 구현 중에 있습니다.
+
+~2024-01-23
+	1. 테스트로 만들었던 유저데이터에 EXP 및 카드 수집 개수 등, 복잡하게 꼬여 구현한 것들을 다시 구현하였습니다.
+	2. 카드의 정보를 보여주고 강화를 하는 부분에서 오류를 발견하여 수정하였습니다.
+	3. 카드를 초월하거나 레벨업 하는 과정에서의 UI부분의 스크립트를 구현하여 새롭게 만들었습니다.
+	4. 카드를 강화하고 난 후, 카드의 정보를 보여주는 곳이 업데이트가 되지 않는 현상을 발견하여 옵저버 패턴에 추가하여 수정하였습니다.
+	5. 계정을 새로 생성할 때, 생성하는 유저데이터 또한 새롭게 변경하였습니다.
+
+~2024-01-25
+	1. Google Admob을 이용하여 구글 광고 계정 생성 후, 광고 리워드 보상으로 보석 500개를 획득하도록 구현하였습니다.
+	- Admob Sdk를 위해 Unity 패키지를 임포트 하였습니다.
+	리워드 보상 광고를 생성하였습니다.
+	권한 추가 및 광고를 위하여 추가 및 적어야할 부분들을 확인하여 추가하였습니다.
+	광고를 보고 리워드 보상이 지급되도록 구현하여 완성하였습니다.
+	테스터 기기 ID를 추가하여 구현되는 것을 확인하였습니다.
+	
+	2. 인앱 결제를 통하여 앱의 유료 재화인 보석을 획득하도록 구현하였습니다.
+	- 유니티 내의 인앱 결제 패키지를 설치하였습니다.
+	구글 플레이 콘솔의 라이센스 키를 유니티 클라우드에 적용하였고, 또한 프로젝트 내에서 또한 적용시켰습니다.
+	구글플레이콘솔의 내부테스트에 적용된 .aab를 추가하여 인앱 상품을 만들 수 있도록 구현하였고, 유료재화를 구매할 수 있는
+	결제 상품을 만들었습니다.
+	활성화 후, IAP Button을 이용하여 결제를 할 수 있도록 Button에 구현하였고, 내부 테스트로 받은 어플을 실행 하여 확인한 결과,
+	정상적으로 작동하는 것을 확인하였습니다.
+	테스터 기기를 구글플레이 콘솔에 등록하여 항상 승인되도록 하였습니다.
+
+ ~2024-01-28
+	1. 인앱 검증 시스템 내부 시스템으로 구현
+	- 인앱 검증 시스템을 파이어베이스 펑션 시스템 등, 서버를 이용한 검증을 통하여 구현하고 싶었지만,
+	  비용적인 측면으로 인하여, 내부시스템으로 검증할 수 있도록 구현하였습니다.
+	2. 결제 버튼의 스크립트인 IAP Button이 codeless로는 작동이 되질 않아 UI 부분에 수정할 사항들을 수정하였습니다.
+	3. 히어로 캐릭터의 수를 늘렸습니다.
+	- 총 18명의 히어로를 만들었지만 12명을 추가하여 30명이 채워지도록 구현하였습니다.
+	- 해당 히어로를 만듬으로써 UI 부분과 데이터 부분을 수정하였습니다.
+	4. Weight Random 을 이용하여 구현한 소환 뽑기에서 특수 소환 뽑기의 뽑기 확률을 늘리도록 구현할 예정입니다.
+	5. UI의 이미지가 좀 더 나아지게 하기 위하여 Sprite를 추가하여 UI를 개선하였습니다.
+
+~2024-01-31
+	1. 파이어베이스 클라우드 펑션 구현
+	- 인앱 결제를 내부 결제 검증을 이용하여 구현하려 하였지만 너무 보안이 취약하다고 생각하여 클라우드 펑션을 이용하여
+	결제 검증을 하도록 구현하였습니다.
+
+	2. 파이어베이스 파이어스토어 데이터베이스로 전환하려다 롤백.
+	- 파이어베이스 파이어스토어를 이용하여 구현할 경우. 영문 모를 에러가 발생하는 것을 확인하였습니다.
+	서치 결과, 다수의 이용자가 같은 증상인 것을 확인하였고, 에러 후에 정상적으로 작동은 되는 것을 확인하였습니다.
+	하지만 리스트나 벡터를 제대로 못불러오는 등, 따로 딕셔너리로 편집하거나 파이어스토어 프로퍼티로 규정하는 등
+	복잡한 구현 방법과 고칠 순 없지만 작동하는 에러로 인한 불편함 등으로 인하여 코드를 계속 수정하는 끝에 결국 롤백하기로 하였습니다.
+
+	3. 정오가 지나고 다음날이 되면 레이드 티켓이 0장일 경우 1장으로 바꾸도록 펑션을 이용하여 구현하려고 하는 중입니다.
+
+~2025-02-04
+	1. 클라우드 펑션으로 인앱 겅증 에러 현상 해결
+	- 파이어베이스 펑션의 정보인 index.js에서 제대로 적용하지 못하여서 로그에 기록이 남아도 에러와 실패했다는 로그만 남아있는 현상을 발견하였습니다.
+	다시 수정하여 값을 받아들이고 확인이 되면 보상을 적용하도록 구현하였고, 이 과정에서 UI도 재구성하여 구매중에 로딩창을 띄우도록 하였습니다.
+	또한, 구매 후 지급 받는 과정에서 종료되어 미지급인 경우에는, 프리퍼런스를 이용하여 지급하도록 구현하였습니다.
+
+	2. 몬스터 및 플레이어 Hit Postion 설정 후, 풀링 시스템을 이용하여 타격시 데미지 폰트 적용 및 데미지 연산과 타격 적용.
+	- 몬스터와 플레이어의 스텟이 상승하는 부분을 재적용하였습니다. 또한 해당 스텟들을 이용하여 데미지를 환산하는 메서드를 GameUtility nameSpace에
+	구현하였습니다. 구현한 환산으로 데미지를 구현하여 서로 싸우도록 구현하였습니다.
+	크리티컬 및 일반 공격에 따라 데미지 폰트의 이미지 크기와 컬러도 변경하였습니다.
+	풀링을 이용하여 데미지 폰트를 생성하는 오브젝트를 미리 생성해놓고 타격시 불러오도록 설정하였습니다.
+
+2025-02-05
+1. 플레이어 크리티컬 재정지 환산식 에서 크리티컬 반영 안됨 해결
+2. 몬스터 사망 시, 사라짐
+3. 공용강화 부분 경험치는 사용안하므로hp로 변경, 변경에 따른 스크립트 수정
+4. 몬스터 사망 시, 킬카운트 체크 - StageData에 킬카운트 체크하기 위해 int변수 생성
+5. DataManager의 RoundMax의 수치를 초과하면 체크하다 보스몬스터 소환
+6. 보스몬스터 처치 완료 시, 다음 스테이지 이동
+7. 보스몬스터 처치 못할 시, 스테이지 초기화
+
+
+2025-02-06
+1. 플레이어 환산식을 몬스터와 뒤바꿔 구현하여 다시 수정.
+2. 보스몬스터 소환하는 스크립트 구현, 30마리 처치 시, 보스몬스터 소환 버튼 생성
+3. HeroController에서 버벅이는 현상 -> FSM이 번갈아 가며 빠르게 돌아가는 현상 해결
+4. HeroContoller 및 AttackAreUnitFinid 스크립트에서 몬스터의 처치 유무를 확인하여 FSM이 돌아가도록 재 구현.
+5. 오토사냥 시, 따라오는 히어로들이 주변에 몬스터가 없는 경우, 가만히 서있는 것을 대비하여 주변에 없으면 움직이도록 구현할 예정
+
+2025-02-07
+1. 몬스터 컨트롤러에서 불필요한 부분이나 잘못된 부분 수정 및 삭제 구현
+2. FSM에 구현하기 보단, 몬스터 컨트롤러에서 메서드를 구현한 후, FSM에 적용하도록 구현함.
+3. 배경이 움직이도록 구현한 배경 테스트 컨트롤러를 배경 컨트롤러를 생성하여 구현함.
+4. 보스 스폰버튼을 클릭 시, 보스가 생성되었을 때, 보스방향으로 이동 후, 다시 되돌아 오는 카메라 관련 메서드를 구현.
+5. 오토사냥 시, 따라오는 히어로들이 주변에 몬스터가 없는 경우, 가만히 서있는 것을 대비하여 주변에 없으면 움직이도록 구현할 예정 및
+	보스 스폰 버튼 클릭 시, 보스 생성하도록 구현.
+
+~2025-02-10
+1. MonsterController에서 FSM과 관련된 부분들을 메서드로 구현하여 FSM에서 불러오도록 메서드를 추가 및 수정하였습니다.
+	-이제 FSM은 MonsterController의 메서드를 FSM대로 돌아갈 뿐, 직접 관여하는 것은 없도록 구현하였습니다.
+2. MonsterController를 기반으로 하는 BossMonsterController를 구현하였습니다.
+	-따로 수정이 필요한 부분을 override하여 재구현하였습니다.
+3. Boss의 FSM에서 필요없는 부분 및 추가해야할 부분들을 추가하여 override하여 재구현하였습니다.
+4. 보스 스폰 버튼 클릭 시, 해당 보스 생성 지역으로 카메라가 이동 후, 몇초 동안 보여준 뒤, 히어로에게 옮겨지도록 구현하였습니다.
+	- 해당 카메라가 이동하고 멈춰있는 구간에 모든 몬스터가 삭제 되고, 히어로들과 보스몬스터는 카메라가 이동이 멈추기 까지 Update()부분이
+	돌아가지 않도록 return하도록 하였습니다.
+
+5. BossMonster가 죽거나, 죽으면 UI를 띄우도록 하기 위해 메서드를 구현하였고, 해당 메서드에 추가하기 위해 챕터 관련 UI 스크립트를 구현할 예정입니다.
+	Hero가 죽으면 Respawn되거나, LifeSteal 스텟 관련으로 몬스터를 피격 시, 피를 흡수하도록 하는 메서드도 구현중입니다.
+	-Hero 죽으면 Respawn 구현 완료, 보스몬스터에게 모두 죽으면 리스폰 중단 메서드 구현.
+
+2025-02-11
+1. HeroController가 몬스터 파격 시, 체력을 흡수하도록 구현하였습니다.
+2. Ingame에서 보스몬스터에게 죽거나 처치할 경우, 안내해주는 ChapterWindow 스크립트를 구현하였습니다.
+	- Hero들이 죽으면 다시 보스 처치 실패로 확인되어, 현재 챕터 라운드를 다시 진행하고, 처치 성공한 경우, 다음 라운드를 가거나
+	다음 챕터를 가도록 구현하였습니다. text문구는 결과에 따라 달라지며, 현재 Auto인지 아닌지에 따라에도 달라지며, Auto인 경우,
+	자동으로 넘어가도록 구현하였고 아닌 경우 터치를 해야지 넘어가도록 구현하였습니다.
+3. BossMonsterController에서 ChapterWindow를 이용하여 로직이 진행되도록 UIManager에 추가하여 관리하였습니다.
+4. 레이드 보스와 스테이지 보스의 능력치를 부여해주기 위해 몬스터 타입을 추가하여 스테이지와 라운드별로 강해지도록 구현하였습니다.
+5. 다음챕터로 넘어가거나 현재 챕터로 다시 돌아가도록 하기위한 메서드 안을 구현해야하며, 몬스터 골드를 챕터및 라운드별로 지급하도록 구현할 예정입니다.
+
+2025-02-11
+1. Hero & Monster Prefab의 Material 변경 및 에디터 추가
+2. Monster FSM 에러부분을 확인 DoChase()의 If문의 !문제로 인한 에러로 확인되어 수정 후 해결.
+3. BossMonster가 공격하지 않는 현상을 해결하였습니다.
+4. AnimationController를 추가하지 않아 공격에서 멈추는 현상을 해결하였습니다.
+5. Hero가 BossMonster를 타격하지 않는 현상 해결
+
+2025-02-14
+1. Chapter 넘어가도록 구현하였습니다.
+	- 보스 처치 실패 시, 다시 몬스터가 생성되도록 스크립트를 수정하였습니다.
+	보스 처치 성공 시, 라운드가 맥스가 아니면 현재 스테이지에서 다시 시작되도록 구현하였습니다.
+	스테이지가 넘어가는 경우에는 로딩창을 띄워 맵을 바꾸고, 다시 시작되도록 구현하였습니다.
+	스테이지 짝수 맵에서 몬스터가 움직이지 않는 현상을 수정하였습니다.
+
+2025-02-16
+1. 맵 로드 시, Chapter Round UI (Stage - Boss - Raid)표시를 위한 스크립트 및 오브젝트를 구현하였습니다.
+
+2025-02-17
+1. Raid 처치 완료 및 실패 시 넘어가는 RaidResult와 스테이지 처치 완료 및 실패 시, StageResult의 스크립트를 구현
+2. 스테이지와 레이드 구간마다 UI 구현 완료.
+3. 파이어베이스 펑션 티켓 데이터를 갱신시켜주는 스케쥴 구현 실패로 인하여 onRequest로 다시 구현할지 테스트 중입니다.
+
+2025-02-20
+1.AuidoManager 스크립트 구현 및, PlayerPrefs를 이용하여 Sound 관리
+2.Addressable을 이용하여 AudioClip을 불러내어 사운드 구현.
+3. OnSchedule로 구현한 티켓 갱신이 실패하여 OnRequest를 이용하여 HTTP로 받아오도록 구현한 후, 구글 클라우드플랫폼에서
+스케쥴 작성을 하여 정해진 시간에 갱신하도록 구현하였습니다. 제대로 돌아가는지 강제 실행을 통하여 구현 성공을 확인하였습니다.
+
+~2025-03-01
+1.SFX/HeroPrefab/HeroSprite를 addressable에서 Remote를 이용하여 추가 설치를 받아 이용할 수 있도록 구현하였습니다.
+2.Remote는 파이어베이스의 호스팅을 이용하여 구현하였습니다.
+3.파일을 추가 설치하여 받을 수 있도록 추가 설치 UI와 추가설치를 다운로드 할 수 있는 Scene을 추가하였습니다.
+4.처음 게임 인트로에서 터치 시, 추가 설치파일이 있는지 체킹 후, 필요할 경우 다운로드로 넘어가는 UI 창(용량 표시)를 띄우도록 구현하였습니다.
+	이 후, 확인 시, 다운로드 창으로 넘어가 설치 후 인게임으로 넘어갈 수 있도록 구현하였습니다.
+5.BGM은 Local로 apk패키지 내에서 사용할 수 있도록 어드레서블로 구현하여, 인트로, 다운로드, 인게임 씬에서 BGM이 다르도록 구현하였습니다.
+6.HeroPrefab이 비동기 중, 절차지향적인 순서로 인하여 먼저 처리되는 경우가 생기는 부분들을 체크하여, 수정하였습니다.
+
+~2025-03-10
+1.SFX 관련 SOUND를 어드레서블에 등록하였고, 호스팅에 depoly하였습니다.
+2.SFX 관련 Sound가 필요한 부분들에 불러와 소리가 나오도록 구현하였습니다.
+3.보스몬스터가 처치 된 이후거나, 몬스터가 재 생성되는 경우에 스폰 되자마자, 히어로와 몬스터끼리 먼 거리에서도 싸우는 현상을 수정하였습니다.
+- 몬스터가 처치되면 히어로와 몬스터의 Unit관련 List들을 초기화하도록 구현하였습니다.
+4.게임 입장 시, 챕터를 알려주는 UI 부분이 나오지 않는 것을 확인하여 수정하였습니다.
+5.보호정책을 위한 Ui를 추가하였습니다. 게임 첫 실행 때 나오고 난 후, 이후에는 나오지않도록 구현하였습니다.
+- auth의 currentUser 체크판단 유무
+6.그동안 간결하게 로그인을 구현하지않고 복잡하게 구현하였던 부분들을 최적화하였습니다.
+7.계정이 생성된 시간과 마지막 로그인이 겹치면 신규 계정 이므로, 새로운 계정 데이터를 생성해주도록 구현하였습니다.
+- 아닌 경우 기존 로그인 진행.
+8.게임의 공개 테스트를 위해, 플레이콘솔에서 요구하는 사항들을 추가 및 점검하였습니다.
+
+~2025-03-11
+1.확률표 미표기로 인한 정책 위반 알림으로 인하여 게임 내 UI에 확률표 표기
+
+2025-03-12
+1. 슬롯에 장착되어 소환되어야 하지만, 어드레서블과 코루틴으로 구현하는 과정에서 비동기로 인하여 에러가 발생하는 부분 수정 완료.
+	- 슬롯에 장착되기 전, 오브젝트가 먼저 소환되고 슬롯에 장착되는 부분이 생략되어 수정함.
+	- 슬롯에 장착되고, index가 0인 Slot을 따라다니도록 설정하는 부분에서 비동기로 index가 0인 오브젝트가 늦게 소환되어 null이 뜨는 현상 해결
+	- 슬롯에 장착되면, 장착카드 UI가 바껴야 하지만, 바뀌지 않는 현상을 수정하였습니다.
+
+- Test Deployment -
+
+2025-03-14
+1. 레전더리 등급의 카드 이미지 출력 및 소환이 안되는 현상 수정
+2. 데이터가 생성되지 않는 현상 수정
+3. 보스 소환 후, 몬스터 처치 카운팅 불가 및 보스 소환 버튼 생성 불가 수정
+4. 캐릭터 이미지가 이상한 현상 부분 수정
+5. 몬스터가 죽고 나서 움직이는 현상 수정
+
+2025-03-18
+1.레전더리 등급 카드 모데카이저 Img 출력 불가 현상 수정
+2.보스 버튼의 효과음 소리가 안나는 현상 수정
+3.챕터 변경 시, 히어로 멈춤 현상 수정

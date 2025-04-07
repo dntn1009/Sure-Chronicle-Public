@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Barsun
+  m_EditorClassIdentifier: 
+  _cardType: 0
+  _heroSprite: Normal/Barsun.png
+  _heroPrefab: Normal/Barsun.prefab
+  _info:
+    _hp: 100
+    _att: 10
+    _def: 10
+    _attSpeed: 2
+    _critChance: 8
+    _critDamage: 8
+    _LifeSteal: 10
+    _attackType: 1
+  _name: "\uBC14\uB974\uC190"
+  _explane: "\uB3D9\uCABD \uB098\uB77C\uC5D0 \uBCBC\uB97C \uC0DD\uC0B0\uD558\uB294
+    \uB18D\uBD80"
+  _cardCode: 2

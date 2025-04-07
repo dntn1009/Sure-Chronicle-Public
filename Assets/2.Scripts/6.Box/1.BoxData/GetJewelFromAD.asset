@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea784e63f1f4d34287c739071aa7c11, type: 3}
+  m_Name: GetJewelFromAD
+  m_EditorClassIdentifier: 
+  _boxType: 3
+  _title: "\uAD11\uACE0\uBCF4\uACE0 \uBCF4\uC11D \uC5BB\uAE30 x 200"
+  _boxSprite: {fileID: 21300000, guid: 4aa4dc909b586c14198e6883472062be, type: 3}
+  _paySprite: {fileID: 21300002, guid: 66995b6b61aed864daa956ae255d7fee, type: 3}
+  _pay: 0
+  _btnStr: "\uAD11\uACE0\uBCF4\uAE30"
+  _imgColor: {r: 0.78431374, g: 0.70980394, b: 0.39607844, a: 1}
+  _count: 0
+  _gold: 0
+  _jewel: 200

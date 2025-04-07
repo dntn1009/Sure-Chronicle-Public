@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Aiden
+  m_EditorClassIdentifier: 
+  _cardType: 0
+  _heroSprite: Normal/Aiden.png
+  _heroPrefab: Normal/Aiden.prefab
+  _info:
+    _hp: 100
+    _att: 12
+    _def: 12
+    _attSpeed: 2
+    _critChance: 8
+    _critDamage: 8
+    _LifeSteal: 10
+    _attackType: 1
+  _name: "\uC5D0\uC774\uB4E0"
+  _explane: "\uC774\uC81C \uB9C9 \uBAA8\uD5D8\uC744 \uC2DC\uC791\uD558\uB294 \uAE30\uC0AC."
+  _cardCode: 0

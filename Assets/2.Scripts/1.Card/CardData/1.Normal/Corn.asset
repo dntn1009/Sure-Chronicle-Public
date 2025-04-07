@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Corn
+  m_EditorClassIdentifier: 
+  _cardType: 0
+  _heroSprite: Normal/Corn.png
+  _heroPrefab: Normal/Corn.prefab
+  _info:
+    _hp: 105
+    _att: 10
+    _def: 10
+    _attSpeed: 2
+    _critChance: 10
+    _critDamage: 10
+    _LifeSteal: 10
+    _attackType: 1
+  _name: "\uCF54\uB978"
+  _explane: "\uC601\uC8FC\uAC00 \uBAB0\uB77D\uD558\uC5EC \uB5A0\uB3C4\uB294 \uC2E0\uC138\uAC00
+    \uB418\uC5B4, \uC804\uC7A5\uC5D0 \uC788\uB294 \uB2E8\uAC80\uC744 \uC8FC\uC6CC
+    \uB5A0\uB3CC\uC544 \uB2E4\uB2CC\uB2E4."
+  _cardCode: 3

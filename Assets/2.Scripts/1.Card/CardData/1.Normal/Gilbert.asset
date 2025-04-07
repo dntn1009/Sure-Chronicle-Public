@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Gilbert
+  m_EditorClassIdentifier: 
+  _cardType: 0
+  _heroSprite: Normal/Gilbert.png
+  _heroPrefab: Normal/Gilbert.prefab
+  _info:
+    _hp: 100
+    _att: 10
+    _def: 0
+    _attSpeed: 2
+    _critChance: 11
+    _critDamage: 11
+    _LifeSteal: 10
+    _attackType: 1
+  _name: "\uAE38\uBC84\uD2B8"
+  _explane: "\uC790\uC2E0\uC774 \uC9C0\uB0B4\uB358 \uC601\uC9C0\uAC00 \uBAB0\uB77D\uD558\uC5EC
+    \uB18D\uC0AC \uB300\uC2E0 \uC6A9\uBCD1\uC77C\uC744 \uC2DC\uC791\uD55C \uC0AC\uB098\uC774"
+  _cardCode: 4

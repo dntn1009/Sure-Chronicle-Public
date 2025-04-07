@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Youthful Erian
+  m_EditorClassIdentifier: 
+  _cardType: 1
+  _heroSprite: Rare/Youthful_Erian.png
+  _heroPrefab: Rare/Youthful_Erian.prefab
+  _info:
+    _hp: 220
+    _att: 25
+    _def: 20
+    _attSpeed: 2
+    _critChance: 28
+    _critDamage: 25
+    _LifeSteal: 20
+    _attackType: 0
+  _name: "\uCCAD\uB144 \uC5D0\uB9AC\uC548"
+  _explane: "\uB3D9\uCABD\uB098\uB77C\uC5D0\uC11C \uC720\uC77C\uBB34\uC774\uD55C
+    \uAD81\uC218. \uBCF4\uC9C0 \uC54A\uACE0 \uC790\uC5F0\uC758 \uC18C\uB9AC\uB97C
+    \uB4E4\uC5B4 \uBA40\uB9AC \uB5A8\uC5B4\uC9C4 \uBAA9\uD45C\uBB3C\uC744 \uB9DE\uCD98\uB2E4."
+  _cardCode: 16

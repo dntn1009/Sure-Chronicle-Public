@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de9022d8dd504f459fb1061ee2434fe, type: 3}
+  m_Name: Grayfell
+  m_EditorClassIdentifier: 
+  _cardType: 1
+  _heroSprite: Rare/Grayfell.png
+  _heroPrefab: Rare/Grayfell.prefab
+  _info:
+    _hp: 150
+    _att: 28
+    _def: 15
+    _attSpeed: 2
+    _critChance: 15
+    _critDamage: 15
+    _LifeSteal: 20
+    _attackType: 1
+  _name: "\uADF8\uB808\uC774\uD3A0"
+  _explane: "\uD558\uD504\uB9C8\uC871\uC774\uC9C0\uB9CC \uD3C9\uC18C \uC18C\uC2EC\uD55C
+    \uC131\uACA9 \uD0D3\uC5D0 \uD070 \uAE30\uB7C9\uC744 \uBC1C\uD718\uD558\uC9C0
+    \uBABB\uD558\uACE0 \uC77C\uBC18\uBCD1\uC73C\uB85C \uC9C0\uB0B4\uBA70 \uBB34\uC2DC\uBC1B\uB294\uB2E4."
+  _cardCode: 13
