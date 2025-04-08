@@ -9,8 +9,10 @@ Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 �
 ## 📱 주요 기능
 
 - 히어로 수집 및 자동 사냥 기반의 **방치형 RPG 시스템**
+- **Tilemap 기반** 건축물 **자동 투명 처리 구현** (플레이어 근접 시 시야 확보)
 - **Firebase Realtime Database**를 통한 실시간 유저 데이터 저장
 - **Firebase Functions**를 활용한 인앱 결제 검증 및 티켓 자동 지급 로직
+- **Google Play Games Services (GPGS) V2.0**을 이용한 로그인 및 업적 시스템 구현
 - **AdMob** 배너 광고 및 보상형 광고 연동
 - **Addressable** 기반 리소스 관리 및 최적화 구조
 - **URP + Shader Graph** 기반 2D Sprite 곡률 변형 시각 효과
