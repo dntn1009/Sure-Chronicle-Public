@@ -41,8 +41,16 @@ Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 �
 
 ```plaintext
 Assets/
-├── Scripts/                  # 게임 시스템 및 로직
-├── SPUM/                    # 캐릭터 리소스
-├── AddressableAssetsData/   # Addressables 설정
-├── Plugins/                 # 외부 플러그인 (.dll 등)
-├── StreamingAssets/         # 설정 / 광고 리소스
+├── 1.Scenes/                 # 게임 씬 (로비, 전투, 결과 등)
+├── 2.Scripts/               # 전체 게임 로직과 시스템 코드
+├── 3.Sprites/               # 게임 및 UI 리소스 (아이콘, 배경, 오브젝트 등)
+├── 4.Prefabs/               # 프리팹 오브젝트 모음
+├── 5.Animations/            # 애니메이션 클립 및 애니메이터 컨트롤러
+├── 6.Material/              # 머티리얼 및 셰이더 관련 리소스
+├── 7.URP/                   # URP 설정 및 렌더 파이프라인 관련 데이터
+├── 8.Sound/                 # 효과음, 배경음 등 오디오 리소스
+├── 998.DevelopMentLog/      # 일정별 개발 기록, 기능 진행 내용
+├── 999.ExternalAssets/      # 외부 에셋 스토어 리소스
+├── AddressableAssetsData/   # Addressables 설정 파일
+├── Editor/                  # 커스텀 에디터 스크립트 (툴 편의성 향상 목적)
+├── SPUM/                    # 외부 에셋 스토어 리소스 (캐릭터 제작)
