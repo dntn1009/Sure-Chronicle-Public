@@ -4,6 +4,8 @@ Unity로 개발한 방치형 RPG 게임 프로젝트입니다.
 Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 실제 모바일 게임 서비스 수준의 구조를 구현하였습니다.  
 이 저장소는 **코드 구조와 시스템 구성 예시를 보여주기 위한 Public 리포지토리**로, 실행보다는 참고용으로 구성되어 있습니다.
 
+
+
 ---
 
 ## 📆 개발 기간
@@ -12,6 +14,8 @@ Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 �
 > 개인 개발 (기획 / 구현 / Firebase 연동 포함 전체 시스템 직접 개발)
 
 ---
+
+
 
 ---
 
