@@ -13,6 +13,7 @@ Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 �
 - **Firebase Functions**를 활용한 인앱 결제 검증 및 티켓 자동 지급 로직
 - **AdMob** 배너 광고 및 보상형 광고 연동
 - **Addressable** 기반 리소스 관리 및 최적화 구조
+- **URP + Shader Graph** 기반 2D Sprite 곡률 변형 시각 효과
 - 카드 장착 → 히어로 소환 → 슬롯 추적 시스템
 - 쿠폰 입력 / 메시지함을 통한 보상 수령 시스템
 
@@ -33,7 +34,7 @@ Firebase, Google Cloud, Addressable, 인앱 결제, AdMob 등을 통합하여 �
 ## 📎 참고
 
 > 🔐 이 리포지토리는 실행보다는 **구조 참고용으로 제공되는 Public 버전**입니다.  
-> Firebase 키, 서비스 계정, 인앱결제 연동 정보 등은 모두 제거되어 있으며, 민감 정보는 포함되어 있지 않습니다.
+> Firebase 키, 서비스 계정, 인앱결제 연동 정보, 외부 에셋 등은 모두 제거되어 있으며, 민감 정보는 포함되어 있지 않습니다.
 
 ---
 
