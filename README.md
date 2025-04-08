@@ -55,3 +55,10 @@ Assets/
 ├── AddressableAssetsData/   # Addressables 설정 파일
 ├── Editor/                  # 커스텀 에디터 스크립트 (툴 편의성 향상 목적)
 ├── SPUM/                    # 외부 에셋 스토어 리소스 (캐릭터 제작)
+
+functions/
+├── index.js                    # Firebase Functions 진입점 (인앱 결제 검증 등)
+├── package.json                # 의존성 목록
+├── package-lock.json           # 의존성 버전 고정 파일
+├── play-billing-service.json   # GCP 서비스 계정 키 (민감 정보로 리포 제외)
+├── node_modules/               # 자동 설치되는 라이브러리 폴더 (리포 제외)
