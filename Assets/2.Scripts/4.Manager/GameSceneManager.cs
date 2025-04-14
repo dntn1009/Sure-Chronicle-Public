@@ -1,18 +1,16 @@
 using DesignPattern;
+using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Extensions;
-using GooglePlayGames;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using DefineHelper;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using Firebase.Auth;
-using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSceneManager : DonDestory<GameSceneManager>
 {
@@ -99,17 +97,7 @@ public class GameSceneManager : DonDestory<GameSceneManager>
             yield break;
         }
         FirebaseUser user = loginTask.Result;
-        bool isNewUser = user.Metadata.CreationTimestamp == user.Metadata.LastSignInTimestamp;
-        if (isNewUser)
-        {
-            Debug.Log($" Firebase에 새 계정이 생성됨! User ID: {user.UserId}");
-            NewAccountDataCheck(user.UserId); // 신규 계정 처리
-        }
-        else
-        {
-            Debug.Log($" 기존 Firebase 계정으로 로그인됨. User ID: {user.UserId}");
-            StartCoroutine(CheckDownloadSize()); // 기존 계정 로그인 처리
-        }
+        NewAccountDataCheck(user.UserId); // 신규 계정 처리
 
     } // 2
 
@@ -208,7 +196,7 @@ public class GameSceneManager : DonDestory<GameSceneManager>
         // 기본 씬 로드
         AsyncOperation mainSceneLoad = SceneManager.LoadSceneAsync(sceneName);
         mainSceneLoad.allowSceneActivation = false;
-       
+
         while (!mainSceneLoad.isDone)
         {
             float progress = Mathf.Clamp01(mainSceneLoad.progress / 0.9f) * 0.8f;
@@ -335,7 +323,7 @@ public class GameSceneManager : DonDestory<GameSceneManager>
         {
             _loadingText.text = $"{(progress * 100):0}%";
         }
-        if(_progressArrow != null)
+        if (_progressArrow != null)
         {
             RectTransform arrowRect = _progressArrow.GetComponent<RectTransform>();
 
@@ -433,7 +421,7 @@ public class GameSceneManager : DonDestory<GameSceneManager>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(mode == LoadSceneMode.Additive)
+        if (mode == LoadSceneMode.Additive)
             StartCoroutine(InitializeScene(scene, true));
         else
             StartCoroutine(InitializeScene(scene));
